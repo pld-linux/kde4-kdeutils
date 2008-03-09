@@ -10,12 +10,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.0.62
-Release:	1
+Version:	4.0.65
+Release:	0.1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	ffa18471481f4b718a25cbeee4ede9d7
+# Source0-md5:	c337093d67499ab9d972520f0e274424
 URL:		http://www.kde.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -640,6 +640,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/kerfuffle_libzip.desktop
 %{_datadir}/config.kcfg/ark.kcfg
 %{_desktopdir}/kde4/ark.desktop
+## ?
+%attr(755,root,root) %{_bindir}/sweeper
+%{_desktopdir}/kde4/sweeper.desktop
+%{_datadir}/apps/sweeper/sweeperui.rc
+%{_datadir}/dbus-1/interfaces/org.kde.sweeper.xml
 
 %files kcalc -f kcalc.lang
 %defattr(644,root,root,755)
@@ -832,10 +837,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/superkaramba
 %attr(755,root,root) %{_libdir}/libsuperkaramba.so.*.*.*
 %attr(755,root,root) %{_libdir}/libsuperkaramba.so.?
-%attr(755,root,root) %{_libdir}/kde4/plasma_applet_skapplet.so
+%attr(755,root,root) %{_libdir}/kde4/plasma_package_superkaramba.so
+%attr(755,root,root) %{_libdir}/kde4/plasma_scriptengine_superkaramba.so
 %{_datadir}/apps/superkaramba
 %{_desktopdir}/kde4/superkaramba.desktop
 %{_iconsdir}/[!l]*/*/*/superkaramba*.*
-%{_datadir}/kde4/services/plasma-skapplet-default.desktop
+%{_datadir}/kde4/services/plasma-scriptengine-superkaramba.desktop
+%{_datadir}/kde4/services/plasma-package-superkaramba.desktop
 %{_datadir}/config/superkaramba.knsrc
 %{_datadir}/dbus-1/interfaces/org.kde.superkaramba.xml
