@@ -10,12 +10,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.0.65
+Version:	4.0.70
 Release:	0.1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	c337093d67499ab9d972520f0e274424
+# Source0-md5:	f3f798174e1dcf5a7b92748e8d5ed9a1
 URL:		http://www.kde.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -75,8 +75,7 @@ Utilitarios para KDE. Programas disponibles en este paquete:
  - ksim
 
 %description -l ja.UTF-8
-KDEデスクトップ環境用のユーティリティ
-以下のようなパッケージが入っています。
+KDEデスクトップ環境用のユーティリティ 以下のようなパッケージが入っています。
 
 - ark - アーカイブ操作ツール
 - kcalc - 電卓
@@ -176,6 +175,20 @@ formaty.
 
 %description ark -l pt_BR.UTF-8
 Gerenciador de pacotes TAR/comprimidos do KDE.
+
+%package okteta
+Summary:	Binary file editor
+Summary(pl.UTF-8):	Edytor plików binarnych
+Group:		X11/Applications
+Requires:	kde4-kdebase-core >= %{version}
+
+%description okteta
+The program Okteta is another implementation of a standalone, plain
+old-fashioned hex editor. It is based on the libkakao framework, with
+plugins using the basic Okteta core and gui libraries.
+
+%description okteta -l pl.UTF-8
+Okteta.
 
 %package kcalc
 Summary:	KDE Calculator
@@ -575,6 +588,7 @@ rm -rf $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT%{_datadir}/icons/locolor
 
 %find_lang ark			--with-kde
+%find_lang okteta		--with-kde
 #%find_lang irkick		--with-kde
 #%find_lang KRegExpEditor	--with-kde
 %find_lang kcalc		--with-kde
@@ -622,6 +636,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libkerfuffle.so
 %attr(755,root,root) %{_libdir}/libkmilo.so
 %attr(755,root,root) %{_libdir}/libsuperkaramba.so
+%attr(755,root,root) %{_libdir}/liboktetagui.so
+%attr(755,root,root) %{_libdir}/liboktetacore.so
 
 %files ark -f ark.lang
 %defattr(644,root,root,755)
@@ -632,6 +648,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libzip.so
 %attr(755,root,root) %{_libdir}/libkerfuffle.so.?
 %attr(755,root,root) %{_libdir}/libkerfuffle.so.*.*.*
+%attr(755,root,root) %{_libdir}/kde4/kerfuffle_rar.so
 %{_datadir}/apps/ark
 %{_datadir}/kde4/servicetypes/kerfufflePlugin.desktop
 %{_datadir}/kde4/services/ark_part.desktop
@@ -640,11 +657,31 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/kerfuffle_libzip.desktop
 %{_datadir}/config.kcfg/ark.kcfg
 %{_desktopdir}/kde4/ark.desktop
+%{_datadir}/kde4/services/kerfuffle_rar.desktop
 ## ?
 %attr(755,root,root) %{_bindir}/sweeper
 %{_desktopdir}/kde4/sweeper.desktop
 %{_datadir}/apps/sweeper/sweeperui.rc
 %{_datadir}/dbus-1/interfaces/org.kde.sweeper.xml
+
+%files okteta -f okteta.lang
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/okteta
+%attr(755,root,root) %{_libdir}/kde4/libarkpart.so
+%attr(755,root,root) %{_libdir}/kde4/libkbytearrayedit.so
+%attr(755,root,root) %{_libdir}/kde4/liboktetapart.so
+%attr(755,root,root) %{_libdir}/liboktetacore.so.?
+%attr(755,root,root) %{_libdir}/liboktetacore.so.*.*.*
+%attr(755,root,root) %{_libdir}/liboktetagui.so.?
+%attr(755,root,root) %{_libdir}/liboktetagui.so.*.*.*
+%{_desktopdir}/kde4/okteta.desktop
+%dir %{_datadir}/apps/okteta
+%{_datadir}/apps/okteta/oktetaui.rc
+%dir %{_datadir}/apps/oktetapart
+%{_datadir}/apps/oktetapart/oktetapartui.rc
+%{_iconsdir}/hicolor/*x*/apps/okteta.png
+%{_datadir}/kde4/services/kbytearrayedit.desktop
+%{_datadir}/kde4/services/oktetapart.desktop
 
 %files kcalc -f kcalc.lang
 %defattr(644,root,root,755)
