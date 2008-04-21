@@ -188,7 +188,9 @@ old-fashioned hex editor. It is based on the libkakao framework, with
 plugins using the basic Okteta core and gui libraries.
 
 %description okteta -l pl.UTF-8
-Okteta.
+Okteta to kolejna implementacja samodzielnego, tradycyjnego edytora
+szesnastkowego. Jest oparty na szkielecie libkakao z wtyczkami
+wykorzystującymi biblioteki core i gui Okteta.
 
 %package kcalc
 Summary:	KDE Calculator
