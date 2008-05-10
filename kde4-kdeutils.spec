@@ -618,6 +618,9 @@ rm -rf $RPM_BUILD_ROOT%{_datadir}/icons/locolor
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post	ark		-p /sbin/ldconfig
+%postun	ark		-p /sbin/ldconfig
+
 %post	khexedit	-p /sbin/ldconfig
 %postun	khexedit	-p /sbin/ldconfig
 
@@ -632,6 +635,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %post	ksim		-p /sbin/ldconfig
 %postun	ksim		-p /sbin/ldconfig
+
+%post	okteta		-p /sbin/ldconfig
+%postun	okteta		-p /sbin/ldconfig
+
+%post	superkaramba	-p /sbin/ldconfig
+%postun	superkaramba	-p /sbin/ldconfig
 
 %files devel
 %defattr(644,root,root,755)
@@ -648,7 +657,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_bk.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libarchive.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libzip.so
-%attr(755,root,root) %{_libdir}/libkerfuffle.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkerfuffle.so.?
 %attr(755,root,root) %{_libdir}/libkerfuffle.so.*.*.*
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_rar.so
 %{_datadir}/apps/ark
@@ -672,9 +681,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/libarkpart.so
 %attr(755,root,root) %{_libdir}/kde4/libkbytearrayedit.so
 %attr(755,root,root) %{_libdir}/kde4/liboktetapart.so
-%attr(755,root,root) %{_libdir}/liboktetacore.so.?
+%attr(755,root,root) %ghost %{_libdir}/liboktetacore.so.?
 %attr(755,root,root) %{_libdir}/liboktetacore.so.*.*.*
-%attr(755,root,root) %{_libdir}/liboktetagui.so.?
+%attr(755,root,root) %ghost %{_libdir}/liboktetagui.so.?
 %attr(755,root,root) %{_libdir}/liboktetagui.so.*.*.*
 %{_desktopdir}/kde4/okteta.desktop
 %dir %{_datadir}/apps/okteta
@@ -797,7 +806,7 @@ rm -rf $RPM_BUILD_ROOT
 %files kmilo
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libkmilo.so.*.*.*
-%attr(755,root,root) %{_libdir}/libkmilo.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkmilo.so.?
 %attr(755,root,root) %{_libdir}/kde4/kcm_kvaio.so
 %attr(755,root,root) %{_libdir}/kde4/kded_kmilod.so
 %attr(755,root,root) %{_libdir}/kde4/kmilo_asus.so
@@ -875,7 +884,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/superkaramba
 %attr(755,root,root) %{_libdir}/libsuperkaramba.so.*.*.*
-%attr(755,root,root) %{_libdir}/libsuperkaramba.so.?
+%attr(755,root,root) %ghost %{_libdir}/libsuperkaramba.so.?
 %attr(755,root,root) %{_libdir}/kde4/plasma_package_superkaramba.so
 %attr(755,root,root) %{_libdir}/kde4/plasma_scriptengine_superkaramba.so
 %{_datadir}/apps/superkaramba
