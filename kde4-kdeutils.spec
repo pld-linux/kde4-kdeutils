@@ -10,12 +10,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.0.73
+Version:	4.0.74
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	7a4c055b5f48dfe190b92755e1b9df07
+# Source0-md5:	299b8199b89604f283d9db11d67a4963
 URL:		http://www.kde.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
