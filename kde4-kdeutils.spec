@@ -552,9 +552,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/plasma_package_superkaramba.so
 %attr(755,root,root) %{_libdir}/kde4/plasma_scriptengine_superkaramba.so
 %{_datadir}/apps/superkaramba
-%{_desktopdir}/kde4/superkaramba.desktop
-/usr/share/kde4/services/plasma-package-superkaramba.desktop
-/usr/share/kde4/services/plasma-scriptengine-superkaramba.desktop
-%{_iconsdir}/[!l]*/*/*/superkaramba*.*
 %{_datadir}/config/superkaramba.knsrc
 %{_datadir}/dbus-1/interfaces/org.kde.superkaramba.xml
+%{_datadir}/kde4/services/plasma-package-superkaramba.desktop
+%{_datadir}/kde4/services/plasma-scriptengine-superkaramba.desktop
+%{_desktopdir}/kde4/superkaramba.desktop
+%{_iconsdir}/[!l]*/*/*/superkaramba*.*
