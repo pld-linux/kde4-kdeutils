@@ -10,12 +10,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.0.74
+Version:	4.0.80
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	299b8199b89604f283d9db11d67a4963
+# Source0-md5:	e03dcae95c56fc12d3643ee4f4e272e6
 URL:		http://www.kde.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -405,7 +405,6 @@ rm -rf $RPM_BUILD_ROOT%{_datadir}/icons/locolor
 %find_lang kdf			--with-kde
 %find_lang kfloppy		--with-kde
 %find_lang kgpg			--with-kde
-%find_lang kjots		--with-kde
 %find_lang ktimer		--with-kde
 %find_lang kwallet		--with-kde
 %find_lang superkaramba		--with-kde
@@ -452,6 +451,7 @@ rm -rf $RPM_BUILD_ROOT
 ## ?
 %attr(755,root,root) %{_bindir}/sweeper
 %{_desktopdir}/kde4/sweeper.desktop
+%dir %{_datadir}/apps/sweeper
 %{_datadir}/apps/sweeper/sweeperui.rc
 %{_datadir}/dbus-1/interfaces/org.kde.sweeper.xml
 
@@ -527,14 +527,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/*/*/apps/kgpg.*
 %{_datadir}/dbus-1/interfaces/org.kde.kgpg.Key.xml
 
-%files kjots -f kjots.lang
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/kjots
-%{_datadir}/apps/kjots
-%{_datadir}/config.kcfg/kjots.kcfg
-%{_desktopdir}/kde4/Kjots.desktop
-%{_iconsdir}/*/*/apps/kjots.*
-
 %files ktimer -f ktimer.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/ktimer
@@ -557,8 +549,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/superkaramba
 %attr(755,root,root) %{_libdir}/libsuperkaramba.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libsuperkaramba.so.?
+%attr(755,root,root) %{_libdir}/kde4/plasma_package_superkaramba.so
+%attr(755,root,root) %{_libdir}/kde4/plasma_scriptengine_superkaramba.so
 %{_datadir}/apps/superkaramba
 %{_desktopdir}/kde4/superkaramba.desktop
+/usr/share/kde4/services/plasma-package-superkaramba.desktop
+/usr/share/kde4/services/plasma-scriptengine-superkaramba.desktop
 %{_iconsdir}/[!l]*/*/*/superkaramba*.*
 %{_datadir}/config/superkaramba.knsrc
 %{_datadir}/dbus-1/interfaces/org.kde.superkaramba.xml
