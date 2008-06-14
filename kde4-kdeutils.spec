@@ -10,12 +10,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.0.80
+Version:	4.0.82
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	e03dcae95c56fc12d3643ee4f4e272e6
+# Source0-md5:	0c728744559a585c7a7b29376f02da46
 URL:		http://www.kde.org/
 BuildRequires:	gmp-devel
 BuildRequires:	kde4-kdebase-devel >= %{version}
@@ -371,9 +371,9 @@ uruchamianie małych interaktywnych widżetów na pulpicie KDE.
 install -d build
 cd build
 %cmake \
-		-DCMAKE_INSTALL_PREFIX=%{_prefix} \
-		-DSYSCONF_INSTALL_DIR=%{_sysconfdir} \
-		../
+	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
+	-DSYSCONF_INSTALL_DIR=%{_sysconfdir} \
+	../
 %{__make}
 
 %install
