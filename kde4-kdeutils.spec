@@ -17,10 +17,6 @@ Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
 # Source0-md5:	e03dcae95c56fc12d3643ee4f4e272e6
 URL:		http://www.kde.org/
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	ed
-%{?with_hidden_visibility:BuildRequires:	gcc-c++ >= 5:4.1.0-0.20051206r108118.1}
 BuildRequires:	gmp-devel
 BuildRequires:	kde4-kdebase-devel >= %{version}
 BuildRequires:	libarchive-devel
@@ -28,18 +24,10 @@ BuildRequires:	libtool
 BuildRequires:	libxml2-progs
 BuildRequires:	libzip-devel
 BuildRequires:	net-snmp-devel
-%ifarch %{ix86} ppc
-BuildRequires:	pbbuttonsd-lib >= 0.6.8
-%endif
-BuildRequires:	net-snmp-devel
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel
 BuildRequires:	python-modules
-%{?with_hidden_visibility:BuildRequires:	qt-devel >= 6:3.3.5.051113-1}
 BuildRequires:	rpmbuild(macros) >= 1.129
-BuildRequires:	sed >= 4.0
-#BuildRequires:	unsermake >= 040511
-%{?with_xmms:BuildRequires:	xmms-devel}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
