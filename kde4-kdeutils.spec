@@ -19,6 +19,7 @@ Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version
 URL:		http://www.kde.org/
 BuildRequires:	gmp-devel
 BuildRequires:	kde4-kdebase-devel >= %{version}
+BuildRequires:	kde4-kdepimlibs-devel >= %{version}
 BuildRequires:	libarchive-devel
 BuildRequires:	libtool
 BuildRequires:	libxml2-progs
