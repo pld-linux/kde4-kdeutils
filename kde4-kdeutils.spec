@@ -29,6 +29,7 @@ BuildRequires:	net-snmp-devel
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel
 BuildRequires:	python-modules
+BuildRequires:	python-PyQt4-devel
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
