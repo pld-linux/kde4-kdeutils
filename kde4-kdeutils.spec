@@ -1,5 +1,5 @@
 #
-%define		_state		unstable
+%define		_state		stable
 %define		orgname		kdeutils
 Summary:	K Desktop Environment - utilities
 Summary(es.UTF-8):	KDE - Utilitarios
@@ -10,12 +10,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.0.98
+Version:	4.1.0
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	e6536b7b8e52953ebe80ae5dd6e32abb
+# Source0-md5:	456d811618e5417e224476089df9a3b3
 URL:		http://www.kde.org/
 BuildRequires:	automoc4 >= 0.9.83
 BuildRequires:	gmp-devel
