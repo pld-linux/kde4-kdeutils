@@ -1,6 +1,7 @@
 #
-%define		_state		stable
+%define		_state		unstable
 %define		orgname		kdeutils
+%define		qtver		4.4.1
 Summary:	K Desktop Environment - utilities
 Summary(es.UTF-8):	KDE - Utilitarios
 Summary(ja.UTF-8):	KDEデスクトップ環境 - ユーティリティ
@@ -10,13 +11,30 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.1.0
+Version:	4.1.61
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	456d811618e5417e224476089df9a3b3
+# Source0-md5:	19426508e55f211ffedbfdad5f71dd55
 URL:		http://www.kde.org/
+BuildRequires:	Qt3Support-devel >= %{qtver}                       
+BuildRequires:	QtAssistant-devel >= %{qtver}
+BuildRequires:	QtCore-devel >= %{qtver}
+BuildRequires:	QtDBus-devel >= %{qtver}
+BuildRequires:	QtDesigner-devel >= %{qtver}
+BuildRequires:	QtGui-devel >= %{qtver}
+BuildRequires:	QtHelp-devel >= %{qtver}
+BuildRequires:	QtNetwork-devel >= %{qtver}
+BuildRequires:	QtOpenGL-devel >= %{qtver}
+BuildRequires:	QtScript-devel >= %{qtver}
+BuildRequires:	QtSql-devel >= %{qtver}
+BuildRequires:	QtSvg-devel >= %{qtver}
+BuildRequires:	QtTest-devel >= %{qtver}
+BuildRequires:	QtUiTools-devel >= %{qtver}
+BuildRequires:	QtWebKit-devel >= %{qtver}
+BuildRequires:	QtXml-devel >= %{qtver}
+BuildRequires:	QtXmlPatterns-devel >= %{qtver}
 BuildRequires:	automoc4 >= 0.9.83
 BuildRequires:	gmp-devel
 BuildRequires:	kde4-kdebase-devel >= %{version}
@@ -27,10 +45,11 @@ BuildRequires:	libxml2-progs
 BuildRequires:	libzip-devel
 BuildRequires:	net-snmp-devel
 BuildRequires:	pkgconfig
+BuildRequires:	python-PyQt4-devel
 BuildRequires:	python-devel
 BuildRequires:	python-modules
-BuildRequires:	python-PyQt4-devel
 BuildRequires:	rpmbuild(macros) >= 1.129
+BuildRequires:	system-config-printer
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -367,6 +386,18 @@ little interactive widgets on a KDE desktop.
 SuperKaramba to narzędzie pozwalające na łatwe tworzenie i
 uruchamianie małych interaktywnych widżetów na pulpicie KDE.
 
+%package printer-applet
+Summary:	Printer applet
+Summary(pl.UTF-8):	Printer applet
+Group:		X11/Applications
+Requires:	kde4-kdebase-core >= %{version}
+
+%description printer-applet
+printer-applet
+
+%description printer-applet -l pl.UTF-8
+printer-applet
+
 %prep
 %setup -q -n %{orgname}-%{version}
 
@@ -552,3 +583,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/plasma-scriptengine-superkaramba.desktop
 %{_desktopdir}/kde4/superkaramba.desktop
 %{_iconsdir}/[!l]*/*/*/superkaramba*.*
+
+%files printer-applet
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/printer-applet
+%dir %{_datadir}/apps/printer-applet
+%{_datadir}/apps/printer-applet/printer-applet-printers.ui
+%{_datadir}/apps/printer-applet/printer-applet.py
+%{_datadir}/apps/printer-applet/printer-applet.ui
+%{_datadir}/apps/printer-applet/printer-appletui.rc
+%{_datadir}/autostart/printer-applet.desktop
