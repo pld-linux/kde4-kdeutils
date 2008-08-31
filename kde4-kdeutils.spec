@@ -1,4 +1,7 @@
 #
+# TODO:
+# python-PyKDE4 whatever for printer-applet
+#
 %define		_state		unstable
 %define		orgname		kdeutils
 %define		qtver		4.4.1
@@ -11,12 +14,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.1.61
+Version:	4.1.64
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	19426508e55f211ffedbfdad5f71dd55
+# Source0-md5:	2e92325a4bc131cca9c6d5ac9d34b6ac
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}                       
 BuildRequires:	QtAssistant-devel >= %{qtver}
@@ -458,21 +461,23 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/ark
 %attr(755,root,root) %{_libdir}/kde4/libarkpart.so
+%attr(755,root,root) %{_libdir}/kde4/kerfuffle_7zip.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_bk.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libarchive.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libzip.so
+%attr(755,root,root) %{_libdir}/kde4/kerfuffle_rar.so
 %attr(755,root,root) %ghost %{_libdir}/libkerfuffle.so.?
 %attr(755,root,root) %{_libdir}/libkerfuffle.so.*.*.*
-%attr(755,root,root) %{_libdir}/kde4/kerfuffle_rar.so
 %{_datadir}/apps/ark
 %{_datadir}/kde4/servicetypes/kerfufflePlugin.desktop
 %{_datadir}/kde4/services/ark_part.desktop
+%{_datadir}/kde4/services/kerfuffle_7zip.desktop
 %{_datadir}/kde4/services/kerfuffle_bk.desktop
 %{_datadir}/kde4/services/kerfuffle_libarchive.desktop
 %{_datadir}/kde4/services/kerfuffle_libzip.desktop
+%{_datadir}/kde4/services/kerfuffle_rar.desktop
 %{_datadir}/config.kcfg/ark.kcfg
 %{_desktopdir}/kde4/ark.desktop
-%{_datadir}/kde4/services/kerfuffle_rar.desktop
 ## ?
 %attr(755,root,root) %{_bindir}/sweeper
 %{_desktopdir}/kde4/sweeper.desktop
@@ -546,6 +551,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kgpg
 %{_datadir}/kde4/services/ServiceMenus/encryptfile.desktop
 %{_datadir}/kde4/services/ServiceMenus/encryptfolder.desktop
+%{_datadir}/kde4/services/ServiceMenus/viewdecrypted.desktop
 %{_datadir}/autostart/kgpg.desktop
 %{_datadir}/config.kcfg/kgpg.kcfg
 %{_desktopdir}/kde4/kgpg.desktop
@@ -584,12 +590,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kde4/superkaramba.desktop
 %{_iconsdir}/[!l]*/*/*/superkaramba*.*
 
-%files printer-applet
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/printer-applet
-%dir %{_datadir}/apps/printer-applet
-%{_datadir}/apps/printer-applet/printer-applet-printers.ui
-%{_datadir}/apps/printer-applet/printer-applet.py
-%{_datadir}/apps/printer-applet/printer-applet.ui
-%{_datadir}/apps/printer-applet/printer-appletui.rc
-%{_datadir}/autostart/printer-applet.desktop
+#%files printer-applet
+#%defattr(644,root,root,755)
+#%attr(755,root,root) %{_bindir}/printer-applet
+#%dir %{_datadir}/apps/printer-applet
+#%{_datadir}/apps/printer-applet/printer-applet-printers.ui
+#%{_datadir}/apps/printer-applet/printer-applet.py
+#%{_datadir}/apps/printer-applet/printer-applet.ui
+#%{_datadir}/apps/printer-applet/printer-appletui.rc
+#%{_datadir}/autostart/printer-applet.desktop
