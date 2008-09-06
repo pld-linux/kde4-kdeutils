@@ -14,12 +14,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.1.64
+Version:	4.1.65
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	2e92325a4bc131cca9c6d5ac9d34b6ac
+# Source0-md5:	f9877b634d030b4b1a0e3ca36f78ec6c
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}                       
 BuildRequires:	QtAssistant-devel >= %{qtver}
@@ -410,6 +410,7 @@ cd build
 %cmake \
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
 	-DSYSCONF_INSTALL_DIR=%{_sysconfdir} \
+	-DINSTALL_PRINTER_APPLET=TRUE \
 %if "%{_lib}" == "lib64"
 	-DLIB_SUFFIX=64 \
 %endif
@@ -590,12 +591,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kde4/superkaramba.desktop
 %{_iconsdir}/[!l]*/*/*/superkaramba*.*
 
-#%files printer-applet
-#%defattr(644,root,root,755)
-#%attr(755,root,root) %{_bindir}/printer-applet
-#%dir %{_datadir}/apps/printer-applet
-#%{_datadir}/apps/printer-applet/printer-applet-printers.ui
-#%{_datadir}/apps/printer-applet/printer-applet.py
-#%{_datadir}/apps/printer-applet/printer-applet.ui
-#%{_datadir}/apps/printer-applet/printer-appletui.rc
-#%{_datadir}/autostart/printer-applet.desktop
+%files printer-applet
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/printer-applet
+%dir %{_datadir}/apps/printer-applet
+%{_datadir}/apps/printer-applet/printer-applet-printers.ui
+%{_datadir}/apps/printer-applet/printer-applet.py
+%{_datadir}/apps/printer-applet/printer-applet.ui
+%{_datadir}/apps/printer-applet/printer-appletui.rc
+%{_datadir}/autostart/printer-applet.desktop
