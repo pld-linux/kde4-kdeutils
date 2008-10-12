@@ -20,6 +20,7 @@ License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
 # Source0-md5:	e1fca1a2e2e214caa4e52eabdf201570
+Patch0:		%{name}-findsystemprinter.patch
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}                       
 BuildRequires:	QtAssistant-devel >= %{qtver}
@@ -403,6 +404,7 @@ printer-applet
 
 %prep
 %setup -q -n %{orgname}-%{version}
+%patch0 -p0
 
 %build
 install -d build
