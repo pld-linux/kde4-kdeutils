@@ -14,12 +14,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.1.65
+Version:	4.1.69
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	f9877b634d030b4b1a0e3ca36f78ec6c
+# Source0-md5:	e1fca1a2e2e214caa4e52eabdf201570
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}                       
 BuildRequires:	QtAssistant-devel >= %{qtver}
@@ -477,6 +477,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/kerfuffle_libarchive.desktop
 %{_datadir}/kde4/services/kerfuffle_libzip.desktop
 %{_datadir}/kde4/services/kerfuffle_rar.desktop
+%dir %{_datadir}/kde4/services/ServiceMenus
+%{_datadir}/kde4/services/ServiceMenus/ark_addtoservicemenu.desktop
+%{_datadir}/kde4/services/ServiceMenus/ark_servicemenu.desktop
 %{_datadir}/config.kcfg/ark.kcfg
 %{_desktopdir}/kde4/ark.desktop
 ## ?
@@ -513,7 +516,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kconf_update/kcalcrc.upd
 %{_datadir}/config.kcfg/kcalc.kcfg
 %{_desktopdir}/kde4/kcalc.desktop
-%{_iconsdir}/*/*/apps/kcalc.*
+#%{_iconsdir}/*/*/apps/kcalc.*
 
 %files kcharselect -f kcharselect.lang
 %defattr(644,root,root,755)
