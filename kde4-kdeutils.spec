@@ -14,12 +14,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.1.69
+Version:	4.1.70
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	e1fca1a2e2e214caa4e52eabdf201570
+# Source0-md5:	93778acec0335ea3b2ae3fb44f5c62f8
 Patch0:		%{name}-findsystemprinter.patch
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}                       
@@ -468,6 +468,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_bk.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libarchive.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libzip.so
+%attr(755,root,root) %{_libdir}/kde4/kerfuffle_libgz.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_rar.so
 %attr(755,root,root) %ghost %{_libdir}/libkerfuffle.so.?
 %attr(755,root,root) %{_libdir}/libkerfuffle.so.*.*.*
@@ -479,6 +480,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/kerfuffle_libarchive.desktop
 %{_datadir}/kde4/services/kerfuffle_libzip.desktop
 %{_datadir}/kde4/services/kerfuffle_rar.desktop
+%{_datadir}/kde4/services/kerfuffle_libgz.desktop
 %dir %{_datadir}/kde4/services/ServiceMenus
 %{_datadir}/kde4/services/ServiceMenus/ark_addtoservicemenu.desktop
 %{_datadir}/kde4/services/ServiceMenus/ark_servicemenu.desktop
