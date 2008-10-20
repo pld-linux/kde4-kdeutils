@@ -162,7 +162,7 @@ Summary:	KDE Archive Manager
 Summary(pl.UTF-8):	Zarządca archiwów dla KDE
 Summary(pt_BR.UTF-8):	Gerenciador de pacotes TAR/comprimidos do KDE
 Group:		X11/Applications
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 Requires:	libarchive
 Requires:	libzip
 
@@ -182,7 +182,7 @@ Gerenciador de pacotes TAR/comprimidos do KDE.
 Summary:	Binary file editor
 Summary(pl.UTF-8):	Edytor plików binarnych
 Group:		X11/Applications
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description okteta
 The program Okteta is another implementation of a standalone, plain
@@ -199,7 +199,7 @@ Summary:	KDE Calculator
 Summary(pl.UTF-8):	Kalkulator dla KDE
 Summary(pt_BR.UTF-8):	Calculadora do KDE
 Group:		X11/Applications
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description kcalc
 Calculator for KDE.
@@ -215,7 +215,7 @@ Summary:	KDE Character Selector
 Summary(pl.UTF-8):	Program do wybierania znaków dla KDE
 Summary(pt_BR.UTF-8):	Ferramenta de seleção de caracteres
 Group:		X11/Applications
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description kcharselect
 Application for selecting characters.
@@ -260,7 +260,7 @@ Summary:	KDE Text Editor
 Summary(pl.UTF-8):	Edytor tekstu dla KDE
 Summary(pt_BR.UTF-8):	Editor de texto melhorado do KDE
 Group:		X11/Applications/Editors
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description kedit
 Simple text editor for KDE.
@@ -277,7 +277,7 @@ Summary(pl.UTF-8):	Program formatujący dyskietki dla KDE
 Summary(pt_BR.UTF-8):	Ferramenta de formatação de disquetes
 Group:		X11/Applications
 Requires:	dosfstools
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description kfloppy
 KFloppy formats floppy disks and puts a DOS or ext2fs filesystem on
@@ -294,7 +294,7 @@ Ferramenta de formatação de disquetes.
 Summary:	A frontend for gpg
 Summary(pl.UTF-8):	Nakładka graficzna na gpg
 Group:		X11/Applications
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description kgpg
 kgpg is a simple, free, open source KDE frontend for gpg. It features
@@ -331,7 +331,7 @@ Summary:	KDE Note taker
 Summary(pl.UTF-8):	Notatnik dla KDE
 Summary(pt_BR.UTF-8):	Ferramenta de armazenamento de livros
 Group:		X11/Applications
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description kjots
 kjots is a small note taker program. Name and idea are taken from the
@@ -367,7 +367,7 @@ Monitor de tempo em forma de mini-aplicativo.
 Summary:	Password management tool for KDE
 Summary(pl.UTF-8):	Narzędzie do zarządzania hasłami dla KDE
 Group:		X11/Applications
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description kwalletmanager
 Password management tool for KDE.
@@ -379,7 +379,7 @@ Narzędzie do zarządzania hasłami w KDE.
 Summary:	Little interactive widgets on KDE desktop
 Summary(pl.UTF-8):	Małe interaktywne widżety na pulpicie KDE
 Group:		X11/Applications
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 Provides:	superkaramba = %{version}-%{release}
 
 %description superkaramba
@@ -394,7 +394,7 @@ uruchamianie małych interaktywnych widżetów na pulpicie KDE.
 Summary:	Printer applet
 Summary(pl.UTF-8):	Printer applet
 Group:		X11/Applications
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description printer-applet
 printer-applet
