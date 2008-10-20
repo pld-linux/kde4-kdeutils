@@ -481,7 +481,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/kerfuffle_libzip.desktop
 %{_datadir}/kde4/services/kerfuffle_rar.desktop
 %{_datadir}/kde4/services/kerfuffle_libgz.desktop
-%dir %{_datadir}/kde4/services/ServiceMenus
 %{_datadir}/kde4/services/ServiceMenus/ark_addtoservicemenu.desktop
 %{_datadir}/kde4/services/ServiceMenus/ark_servicemenu.desktop
 %{_datadir}/config.kcfg/ark.kcfg
