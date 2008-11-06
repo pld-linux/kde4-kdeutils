@@ -14,13 +14,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.1.71
+Version:	4.1.72
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	3203f96a91fcb4e8f830d551572a3ca9
-Patch0:		%{name}-findsystemprinter.patch
+# Source0-md5:	efb5c762f908e5396c756acc80b4adfb
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}                       
 BuildRequires:	QtAssistant-devel >= %{qtver}
@@ -404,7 +403,6 @@ printer-applet
 
 %prep
 %setup -q -n %{orgname}-%{version}
-%patch0 -p0
 
 %build
 install -d build
