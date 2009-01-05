@@ -1,6 +1,5 @@
-#
 # TODO:
-# python-PyKDE4 whatever for printer-applet
+# - python-PyKDE4 whatever for printer-applet
 #
 %define		_state		unstable
 %define		orgname		kdeutils
@@ -18,10 +17,10 @@ Version:	4.1.87
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.pbone.net/mirror/ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
+Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
 # Source0-md5:	8d30a1953ee444c4cf2692973b3021f0
 URL:		http://www.kde.org/
-BuildRequires:	Qt3Support-devel >= %{qtver}                       
+BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtAssistant-devel >= %{qtver}
 BuildRequires:	QtCore-devel >= %{qtver}
 BuildRequires:	QtDBus-devel >= %{qtver}
