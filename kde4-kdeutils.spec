@@ -13,12 +13,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.1.87
+Version:	4.1.96
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	8d30a1953ee444c4cf2692973b3021f0
+# Source0-md5:	3e154bdb5d84501b372e2305150c4b47
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtAssistant-devel >= %{qtver}
@@ -463,7 +463,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/ark
 %attr(755,root,root) %{_libdir}/kde4/libarkpart.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_7zip.so
-%attr(755,root,root) %{_libdir}/kde4/kerfuffle_bk.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libarchive.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libzip.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libgz.so
@@ -474,7 +473,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/servicetypes/kerfufflePlugin.desktop
 %{_datadir}/kde4/services/ark_part.desktop
 %{_datadir}/kde4/services/kerfuffle_7zip.desktop
-%{_datadir}/kde4/services/kerfuffle_bk.desktop
 %{_datadir}/kde4/services/kerfuffle_libarchive.desktop
 %{_datadir}/kde4/services/kerfuffle_libzip.desktop
 %{_datadir}/kde4/services/kerfuffle_rar.desktop
@@ -483,6 +481,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/ServiceMenus/ark_servicemenu.desktop
 %{_datadir}/config.kcfg/ark.kcfg
 %{_desktopdir}/kde4/ark.desktop
+%{_mandir}/man1/ark.1.*
 ## ?
 %attr(755,root,root) %{_bindir}/sweeper
 %{_desktopdir}/kde4/sweeper.desktop
@@ -578,7 +577,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/kwalletconfig.desktop
 %{_desktopdir}/kde4/kwalletmanager.desktop
 %{_desktopdir}/kde4/kwalletmanager-kwalletd.desktop
-%{_iconsdir}/[!l]*/*/*/kwalletmanager*.*
+%{_iconsdir}/hicolor/*/apps/kwalletmanager*.png
 
 %files superkaramba -f superkaramba.lang
 %defattr(644,root,root,755)
