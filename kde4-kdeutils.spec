@@ -14,7 +14,7 @@ Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
 Version:	4.2.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
@@ -37,7 +37,7 @@ BuildRequires:	QtUiTools-devel >= %{qtver}
 BuildRequires:	QtWebKit-devel >= %{qtver}
 BuildRequires:	QtXml-devel >= %{qtver}
 BuildRequires:	QtXmlPatterns-devel >= %{qtver}
-BuildRequires:	automoc4 >= 0.9.83
+BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	cmake >= 2.6.2
 BuildRequires:	gmp-devel
 BuildRequires:	kde4-kdebase-devel >= %{version}
