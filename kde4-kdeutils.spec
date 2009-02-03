@@ -1,6 +1,9 @@
+# TODO:
+# - python-PyKDE4 whatever for printer-applet
 #
 %define		_state		stable
 %define		orgname		kdeutils
+%define		qtver		4.4.3
 Summary:	K Desktop Environment - utilities
 Summary(es.UTF-8):	KDE - Utilitarios
 Summary(ja.UTF-8):	KDEデスクトップ環境 - ユーティリティ
@@ -10,14 +13,32 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.1.0
-Release:	1
+Version:	4.2.0
+Release:	3
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	456d811618e5417e224476089df9a3b3
+# Source0-md5:	f0ca24c7d3e5bb0ab55bf6b26fc6224e
 URL:		http://www.kde.org/
-BuildRequires:	automoc4 >= 0.9.83
+BuildRequires:	Qt3Support-devel >= %{qtver}
+BuildRequires:	QtAssistant-devel >= %{qtver}
+BuildRequires:	QtCore-devel >= %{qtver}
+BuildRequires:	QtDBus-devel >= %{qtver}
+BuildRequires:	QtDesigner-devel >= %{qtver}
+BuildRequires:	QtGui-devel >= %{qtver}
+BuildRequires:	QtHelp-devel >= %{qtver}
+BuildRequires:	QtNetwork-devel >= %{qtver}
+BuildRequires:	QtOpenGL-devel >= %{qtver}
+BuildRequires:	QtScript-devel >= %{qtver}
+BuildRequires:	QtSql-devel >= %{qtver}
+BuildRequires:	QtSvg-devel >= %{qtver}
+BuildRequires:	QtTest-devel >= %{qtver}
+BuildRequires:	QtUiTools-devel >= %{qtver}
+BuildRequires:	QtWebKit-devel >= %{qtver}
+BuildRequires:	QtXml-devel >= %{qtver}
+BuildRequires:	QtXmlPatterns-devel >= %{qtver}
+BuildRequires:	automoc4 >= 0.9.88
+BuildRequires:	cmake >= 2.6.2
 BuildRequires:	gmp-devel
 BuildRequires:	kde4-kdebase-devel >= %{version}
 BuildRequires:	kde4-kdepimlibs-devel >= %{version}
@@ -27,10 +48,11 @@ BuildRequires:	libxml2-progs
 BuildRequires:	libzip-devel
 BuildRequires:	net-snmp-devel
 BuildRequires:	pkgconfig
+BuildRequires:	python-PyQt4-devel
 BuildRequires:	python-devel
 BuildRequires:	python-modules
-BuildRequires:	python-PyQt4-devel
 BuildRequires:	rpmbuild(macros) >= 1.129
+BuildRequires:	system-config-printer
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -139,7 +161,7 @@ Summary:	KDE Archive Manager
 Summary(pl.UTF-8):	Zarządca archiwów dla KDE
 Summary(pt_BR.UTF-8):	Gerenciador de pacotes TAR/comprimidos do KDE
 Group:		X11/Applications
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 Requires:	libarchive
 Requires:	libzip
 
@@ -159,7 +181,7 @@ Gerenciador de pacotes TAR/comprimidos do KDE.
 Summary:	Binary file editor
 Summary(pl.UTF-8):	Edytor plików binarnych
 Group:		X11/Applications
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description okteta
 The program Okteta is another implementation of a standalone, plain
@@ -176,7 +198,7 @@ Summary:	KDE Calculator
 Summary(pl.UTF-8):	Kalkulator dla KDE
 Summary(pt_BR.UTF-8):	Calculadora do KDE
 Group:		X11/Applications
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description kcalc
 Calculator for KDE.
@@ -192,7 +214,7 @@ Summary:	KDE Character Selector
 Summary(pl.UTF-8):	Program do wybierania znaków dla KDE
 Summary(pt_BR.UTF-8):	Ferramenta de seleção de caracteres
 Group:		X11/Applications
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description kcharselect
 Application for selecting characters.
@@ -237,7 +259,7 @@ Summary:	KDE Text Editor
 Summary(pl.UTF-8):	Edytor tekstu dla KDE
 Summary(pt_BR.UTF-8):	Editor de texto melhorado do KDE
 Group:		X11/Applications/Editors
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description kedit
 Simple text editor for KDE.
@@ -254,7 +276,7 @@ Summary(pl.UTF-8):	Program formatujący dyskietki dla KDE
 Summary(pt_BR.UTF-8):	Ferramenta de formatação de disquetes
 Group:		X11/Applications
 Requires:	dosfstools
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description kfloppy
 KFloppy formats floppy disks and puts a DOS or ext2fs filesystem on
@@ -271,7 +293,7 @@ Ferramenta de formatação de disquetes.
 Summary:	A frontend for gpg
 Summary(pl.UTF-8):	Nakładka graficzna na gpg
 Group:		X11/Applications
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description kgpg
 kgpg is a simple, free, open source KDE frontend for gpg. It features
@@ -308,7 +330,7 @@ Summary:	KDE Note taker
 Summary(pl.UTF-8):	Notatnik dla KDE
 Summary(pt_BR.UTF-8):	Ferramenta de armazenamento de livros
 Group:		X11/Applications
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description kjots
 kjots is a small note taker program. Name and idea are taken from the
@@ -344,7 +366,7 @@ Monitor de tempo em forma de mini-aplicativo.
 Summary:	Password management tool for KDE
 Summary(pl.UTF-8):	Narzędzie do zarządzania hasłami dla KDE
 Group:		X11/Applications
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description kwalletmanager
 Password management tool for KDE.
@@ -356,7 +378,7 @@ Narzędzie do zarządzania hasłami w KDE.
 Summary:	Little interactive widgets on KDE desktop
 Summary(pl.UTF-8):	Małe interaktywne widżety na pulpicie KDE
 Group:		X11/Applications
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 Provides:	superkaramba = %{version}-%{release}
 
 %description superkaramba
@@ -367,6 +389,18 @@ little interactive widgets on a KDE desktop.
 SuperKaramba to narzędzie pozwalające na łatwe tworzenie i
 uruchamianie małych interaktywnych widżetów na pulpicie KDE.
 
+%package printer-applet
+Summary:	Printer applet
+Summary(pl.UTF-8):	Printer applet
+Group:		X11/Applications
+Requires:	kde4-kdebase >= %{version}
+
+%description printer-applet
+printer-applet
+
+%description printer-applet -l pl.UTF-8
+printer-applet
+
 %prep
 %setup -q -n %{orgname}-%{version}
 
@@ -376,6 +410,7 @@ cd build
 %cmake \
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
 	-DSYSCONF_INSTALL_DIR=%{_sysconfdir} \
+	-DINSTALL_PRINTER_APPLET=TRUE \
 %if "%{_lib}" == "lib64"
 	-DLIB_SUFFIX=64 \
 %endif
@@ -427,21 +462,26 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/ark
 %attr(755,root,root) %{_libdir}/kde4/libarkpart.so
-%attr(755,root,root) %{_libdir}/kde4/kerfuffle_bk.so
+%attr(755,root,root) %{_libdir}/kde4/kerfuffle_7zip.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libarchive.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libzip.so
+%attr(755,root,root) %{_libdir}/kde4/kerfuffle_libgz.so
+%attr(755,root,root) %{_libdir}/kde4/kerfuffle_rar.so
 %attr(755,root,root) %ghost %{_libdir}/libkerfuffle.so.?
 %attr(755,root,root) %{_libdir}/libkerfuffle.so.*.*.*
-%attr(755,root,root) %{_libdir}/kde4/kerfuffle_rar.so
 %{_datadir}/apps/ark
 %{_datadir}/kde4/servicetypes/kerfufflePlugin.desktop
 %{_datadir}/kde4/services/ark_part.desktop
-%{_datadir}/kde4/services/kerfuffle_bk.desktop
+%{_datadir}/kde4/services/kerfuffle_7zip.desktop
 %{_datadir}/kde4/services/kerfuffle_libarchive.desktop
 %{_datadir}/kde4/services/kerfuffle_libzip.desktop
+%{_datadir}/kde4/services/kerfuffle_rar.desktop
+%{_datadir}/kde4/services/kerfuffle_libgz.desktop
+%{_datadir}/kde4/services/ServiceMenus/ark_addtoservicemenu.desktop
+%{_datadir}/kde4/services/ServiceMenus/ark_servicemenu.desktop
 %{_datadir}/config.kcfg/ark.kcfg
 %{_desktopdir}/kde4/ark.desktop
-%{_datadir}/kde4/services/kerfuffle_rar.desktop
+%{_mandir}/man1/ark.1.*
 ## ?
 %attr(755,root,root) %{_bindir}/sweeper
 %{_desktopdir}/kde4/sweeper.desktop
@@ -476,7 +516,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kconf_update/kcalcrc.upd
 %{_datadir}/config.kcfg/kcalc.kcfg
 %{_desktopdir}/kde4/kcalc.desktop
-%{_iconsdir}/*/*/apps/kcalc.*
+#%{_iconsdir}/*/*/apps/kcalc.*
 
 %files kcharselect -f kcharselect.lang
 %defattr(644,root,root,755)
@@ -515,6 +555,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kgpg
 %{_datadir}/kde4/services/ServiceMenus/encryptfile.desktop
 %{_datadir}/kde4/services/ServiceMenus/encryptfolder.desktop
+%{_datadir}/kde4/services/ServiceMenus/viewdecrypted.desktop
 %{_datadir}/autostart/kgpg.desktop
 %{_datadir}/config.kcfg/kgpg.kcfg
 %{_desktopdir}/kde4/kgpg.desktop
@@ -536,7 +577,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/kwalletconfig.desktop
 %{_desktopdir}/kde4/kwalletmanager.desktop
 %{_desktopdir}/kde4/kwalletmanager-kwalletd.desktop
-%{_iconsdir}/[!l]*/*/*/kwalletmanager*.*
+%{_iconsdir}/hicolor/*/apps/kwalletmanager*.png
 
 %files superkaramba -f superkaramba.lang
 %defattr(644,root,root,755)
@@ -552,3 +593,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/plasma-scriptengine-superkaramba.desktop
 %{_desktopdir}/kde4/superkaramba.desktop
 %{_iconsdir}/[!l]*/*/*/superkaramba*.*
+
+%files printer-applet
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/printer-applet
+%dir %{_datadir}/apps/printer-applet
+%{_datadir}/apps/printer-applet/printer-applet-printers.ui
+%{_datadir}/apps/printer-applet/printer-applet.py
+%{_datadir}/apps/printer-applet/printer-applet.ui
+%{_datadir}/apps/printer-applet/printer-appletui.rc
+%{_datadir}/autostart/printer-applet.desktop
