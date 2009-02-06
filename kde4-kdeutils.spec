@@ -390,16 +390,18 @@ SuperKaramba to narzędzie pozwalające na łatwe tworzenie i
 uruchamianie małych interaktywnych widżetów na pulpicie KDE.
 
 %package printer-applet
-Summary:	Printer applet
-Summary(pl.UTF-8):	Printer applet
+Summary:	Printer status applet for KDE
+Summary(pl.UTF-8):	Aplet stanu drukarki dla KDE
 Group:		X11/Applications
 Requires:	kde4-kdebase >= %{version}
 
 %description printer-applet
-printer-applet
+KDE Printer Applet is a system tray utility which shows current print
+jobs and printer warnings or errors.
 
 %description printer-applet -l pl.UTF-8
-printer-applet
+KDE Printer Applet to narzędzie tacki systemowej pokazujące bieżące
+zadania drukarki oraz ostrzeżenia i błędy.
 
 %prep
 %setup -q -n %{orgname}-%{version}
