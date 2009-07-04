@@ -86,7 +86,8 @@ Utilitarios para KDE. Programas disponibles en este paquete:
  - KTimer.
 
 %description -l ja.UTF-8
-KDEデスクトップ環境用のユーティリティ 以下のようなパッケージが入っています。
+KDEデスクトップ環境用のユーティリティ
+以下のようなパッケージが入っています。
 
 - ark - アーカイブ操作ツール
 - kcalc - 電卓
@@ -126,7 +127,8 @@ Utilitários para o KDE. Programas disponíveis neste pacote:
  - ark - менеджер архивов tar/gzip,
  - kcalc - научный калькулятор,
  - kedit - простой текстовый редактор,
- - kfloppy - утилита для форматирования флоппи-дисков,
+ - kfloppy - утилита для форматирования
+   флоппи-дисков,
  - kjots - блокнот,
 
 %description -l uk.UTF-8
@@ -134,7 +136,8 @@ Utilitários para o KDE. Programas disponíveis neste pacote:
  - ark - менеджер архівів tar/gzip,
  - kcalc - научний калькулятор,
  - kedit - простий текстовий редактор,
- - kfloppy - утиліта для форматування флопі-дисків,
+ - kfloppy - утиліта для форматування
+   флопі-дисків,
  - kjots - нотатник,
 
 %package devel
@@ -149,8 +152,8 @@ This package includes the header files you will need to compile
 applications that use kdeutils libraries.
 
 %description devel -l pl.UTF-8
-Ten pakiet zawiera pliki nagłówkowe niezbędne do kompilacji aplikacji
-używających bibliotek kdeutils.
+Ten pakiet zawiera pliki nagłówkowe niezbędne do kompilacji
+aplikacji używających bibliotek kdeutils.
 
 %description devel -l pt_BR.UTF-8
 Arquivos de inclusão para desenvolvimento e compilação de programas
@@ -170,9 +173,9 @@ Ark is a program for managing and quickly extracting archives. It
 supports arj, rar, zip, tar, zoo, lha and other formats.
 
 %description ark -l pl.UTF-8
-Ark jest programem służącym do zarządzania i szybkiego rozpakowywania
-archiwów. Obsługuje archiwa arj, rar, zip, tar, zoo, lha oraz inne
-formaty.
+Ark jest programem służącym do zarządzania i szybkiego
+rozpakowywania archiwów. Obsługuje archiwa arj, rar, zip, tar, zoo,
+lha oraz inne formaty.
 
 %description ark -l pt_BR.UTF-8
 Gerenciador de pacotes TAR/comprimidos do KDE.
@@ -309,8 +312,9 @@ kgpg is a simple, free, open source KDE frontend for gpg. It features
 - drag & drop encryption + clipboard en/decryption
 
 %description kgpg -l pl.UTF-8
-kgpg jest prostą, darmową, z otwartymi źródłami, graficzną nakładką na
-gpg przeznaczoną dla KDE. Ma następujące możliwości:
+kgpg jest prostą, darmową, z otwartymi źródłami, graficzną
+nakładką na gpg przeznaczoną dla KDE. Ma następujące
+możliwości:
 - tryb edytora umożliwiający napisanie/wklejenie tekstu oraz
   zaszyfrowanie/odszyfrowanie/podpisanie/sprawdzenie go,
 - zarządzanie kluczami: import, eksport, usuwanie, podpisywanie,
@@ -318,8 +322,9 @@ gpg przeznaczoną dla KDE. Ma następujące możliwości:
 - integrację z Konquerorem: kliknięcie lewym przyciskiem na pliku w
   celu odszyfrowania/sprawdzenia go, kliknięcie prawym przyciskiem na
   pliku w celu zaszyfrowania/podpisania go,
-- szyfrowanie: obsługa szyfrów symetrycznych; wiele kluczy i domyślne
-  szyfrowanie kluczem; opcjonalnie niszczenie plików źródłowych,
+- szyfrowanie: obsługa szyfrów symetrycznych; wiele kluczy i
+  domyślne szyfrowanie kluczem; opcjonalnie niszczenie plików
+  źródłowych,
 - sygnatury: tworzenie i sprawdzanie oddzielonych i czysto tekstowych
   sygnatur,
 - szyfrowanie metodą przeciągnij-i-upuść oraz szyfrowanie i
@@ -356,8 +361,8 @@ delaying the execution of a command.
 
 %description ktimer -l pl.UTF-8
 To jest aplikacja timera dla KDE. Umożliwia wykonywanie poleceń po
-określonym czasie, zapętlanie poleceń, a także opóźnienie wykonywania
-poleceń.
+określonym czasie, zapętlanie poleceń, a także opóźnienie
+wykonywania poleceń.
 
 %description ktimer -l pt_BR.UTF-8
 Monitor de tempo em forma de mini-aplicativo.
@@ -400,17 +405,18 @@ KDE Printer Applet is a system tray utility which shows current print
 jobs and printer warnings or errors.
 
 %description printer-applet -l pl.UTF-8
-KDE Printer Applet to narzędzie tacki systemowej pokazujące bieżące
-zadania drukarki oraz ostrzeżenia i błędy.
+KDE Printer Applet to narzędzie tacki systemowej pokazujące
+bieżące zadania drukarki oraz ostrzeżenia i błędy.
 
 %package irkick
-Summary:        KDE Irkick
-Summary(pl.UTF-8):      Irkick dla KDE
-Group:          X11/Applications
-Requires:       kde4-kdebase >= %{version}
+Summary:	KDE Irkick
+Summary(pl.UTF-8):	Irkick dla KDE
+Group:		X11/Applications
+Requires:	kde4-kdebase >= %{version}
 
 %description irkick
-irkick.
+KDE LIRC is the infrastructure for the KDE's Infrared Remote Control
+functionality. IRKick is the server component of that infrastructure.
 
 %description irkick -l pl.UTF-8
 irkick.
@@ -634,7 +640,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libkdelirc_shared.so
 %attr(755,root,root) %{_libdir}/libkdelirc_shared.so.1
 %attr(755,root,root) %{_libdir}/libkdelirc_shared.so.1.0.0
-%{_datadir}/applications/kde4/irkick.desktop
+%{_desktopdir}/kde4/irkick.desktop
 %{_datadir}/apps/irkick/irkick.notifyrc
 %{_datadir}/apps/printer-applet/authconn.py
 %{_datadir}/apps/printer-applet/debug.py
