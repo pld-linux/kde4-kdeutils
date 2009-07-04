@@ -14,7 +14,7 @@ Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
 Version:	4.2.95
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
@@ -472,12 +472,16 @@ rm -rf $RPM_BUILD_ROOT
 %post	superkaramba	-p /sbin/ldconfig
 %postun	superkaramba	-p /sbin/ldconfig
 
+%post	irkick	-p /sbin/ldconfig
+%postun	irkick	-p /sbin/ldconfig
+
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libkerfuffle.so
 %attr(755,root,root) %{_libdir}/libsuperkaramba.so
 %attr(755,root,root) %{_libdir}/liboktetagui.so
 %attr(755,root,root) %{_libdir}/liboktetacore.so
+%attr(755,root,root) %{_libdir}/libkdelirc_shared.so
 
 %files ark -f ark.lang
 %defattr(644,root,root,755)
@@ -642,8 +646,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/irkick
 %attr(755,root,root) %{_libdir}/kde4/kcm_lirc.so
 %attr(755,root,root) %{_libdir}/libkdeinit4_irkick.so
-%attr(755,root,root) %{_libdir}/libkdelirc_shared.so
-%attr(755,root,root) %{_libdir}/libkdelirc_shared.so.1
+%attr(755,root,root) %ghost %{_libdir}/libkdelirc_shared.so.?
 %attr(755,root,root) %{_libdir}/libkdelirc_shared.so.1.0.0
 %{_desktopdir}/kde4/irkick.desktop
 %{_datadir}/apps/irkick/irkick.notifyrc
