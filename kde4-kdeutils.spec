@@ -14,7 +14,7 @@ Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
 Version:	4.2.95
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
@@ -662,5 +662,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/remotes/sherwood.remote.xml
 %{_datadir}/apps/remotes/sonytv.remote.xml
 %{_datadir}/autostart/irkick.desktop
+%{_iconsdir}/hicolor/22x22/apps/irkick.png
+%{_iconsdir}/oxygen/*x*/devices/infrared-remote.png
+%{_iconsdir}/oxygen/*x*/actions/irkickflash.png
+%{_iconsdir}/oxygen/*x*/actions/irkickoff.png
 %{_kdedocdir}/en/irkick
 %{_kdedocdir}/en/kcmlirc
