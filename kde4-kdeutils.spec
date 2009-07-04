@@ -403,6 +403,18 @@ jobs and printer warnings or errors.
 KDE Printer Applet to narzędzie tacki systemowej pokazujące bieżące
 zadania drukarki oraz ostrzeżenia i błędy.
 
+%package irkick
+Summary:        KDE Irkick
+Summary(pl.UTF-8):      Irkick dla KDE
+Group:          X11/Applications
+Requires:       kde4-kdebase >= %{version}
+
+%description irkick
+irkick.
+
+%description irkick -l pl.UTF-8
+irkick.
+
 %prep
 %setup -q -n %{orgname}-%{version}
 
@@ -474,6 +486,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_clizip.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libbz2.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libxz.so
+%attr(755,root,root) %{_libdir}/kde4/libextracthere.so
 %{_datadir}/apps/ark
 %{_datadir}/kde4/servicetypes/kerfufflePlugin.desktop
 %{_datadir}/kde4/services/ark_part.desktop
@@ -612,3 +625,42 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/printer-applet/printer-applet.ui
 %{_datadir}/apps/printer-applet/printer-appletui.rc
 %{_datadir}/autostart/printer-applet.desktop
+
+%files irkick
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/irkick
+%attr(755,root,root) %{_libdir}/kde4/kcm_lirc.so
+%attr(755,root,root) %{_libdir}/libkdeinit4_irkick.so
+%attr(755,root,root) %{_libdir}/libkdelirc_shared.so
+%attr(755,root,root) %{_libdir}/libkdelirc_shared.so.1
+%attr(755,root,root) %{_libdir}/libkdelirc_shared.so.1.0.0
+%{_datadir}/applications/kde4/irkick.desktop
+%{_datadir}/apps/irkick/irkick.notifyrc
+%{_datadir}/apps/printer-applet/authconn.py
+%{_datadir}/apps/printer-applet/debug.py
+%{_datadir}/apps/printer-applet/monitor.py
+%{_datadir}/apps/printer-applet/printer-applet.notifyrc
+%{_datadir}/apps/printer-applet/statereason.py
+%{_datadir}/apps/profiles/amarok.profile.xml
+%{_datadir}/apps/profiles/dragonplayer.profile.xml
+%{_datadir}/apps/profiles/klauncher.profile.xml
+%{_datadir}/apps/profiles/kmix.profile.xml
+%{_datadir}/apps/profiles/konqueror.profile.xml
+%{_datadir}/apps/profiles/noatun.profile.xml
+%{_datadir}/apps/profiles/okular.profile.xml
+%{_datadir}/apps/profiles/profile.dtd
+%{_datadir}/apps/profiles/shutdown.profile.xml
+%{_datadir}/apps/profiles/suspend.profile.xml
+%{_datadir}/apps/profiles/vlc.profile.xml
+%{_datadir}/apps/remotes/AppleRemote.remote.xml
+%{_datadir}/apps/remotes/AsusDH.remote.xml
+%{_datadir}/apps/remotes/RM-0010.remote.xml
+%{_datadir}/apps/remotes/cimr100.remote.xml
+%{_datadir}/apps/remotes/hauppauge.remote.xml
+%{_datadir}/apps/remotes/packbell.remote.xml
+%{_datadir}/apps/remotes/remote.dtd
+%{_datadir}/apps/remotes/sherwood.remote.xml
+%{_datadir}/apps/remotes/sonytv.remote.xml
+%{_datadir}/autostart/irkick.desktop
+%{_kdedocdir}/en/irkick
+%{_kdedocdir}/en/kcmlirc
