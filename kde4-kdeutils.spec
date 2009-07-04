@@ -1,9 +1,9 @@
 # TODO:
 # - python-PyKDE4 whatever for printer-applet
 #
-%define		_state		unstable
+%define		_state		stable
 %define		orgname		kdeutils
-%define		qtver		4.5.1
+%define		qtver		4.5.0
 Summary:	K Desktop Environment - utilities
 Summary(es.UTF-8):	KDE - Utilitarios
 Summary(ja.UTF-8):	KDEデスクトップ環境 - ユーティリティ
@@ -13,12 +13,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.2.95
+Version:	4.2.4
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	c15eec30afec2984ecd774dc0ae9c992
+# Source0-md5:	e7214cb1e84d2e6793d3dbeb8f33a3fe
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtAssistant-devel >= %{qtver}
@@ -465,27 +465,21 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/ark
 %attr(755,root,root) %{_libdir}/kde4/libarkpart.so
+%attr(755,root,root) %{_libdir}/kde4/kerfuffle_7zip.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libarchive.so
+%attr(755,root,root) %{_libdir}/kde4/kerfuffle_libzip.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libgz.so
+%attr(755,root,root) %{_libdir}/kde4/kerfuffle_rar.so
 %attr(755,root,root) %ghost %{_libdir}/libkerfuffle.so.?
 %attr(755,root,root) %{_libdir}/libkerfuffle.so.*.*.*
-%attr(755,root,root) %{_libdir}/kde4/kerfuffle_7z.so
-%attr(755,root,root) %{_libdir}/kde4/kerfuffle_clirar.so
-%attr(755,root,root) %{_libdir}/kde4/kerfuffle_clizip.so
-%attr(755,root,root) %{_libdir}/kde4/kerfuffle_libbz2.so
-%attr(755,root,root) %{_libdir}/kde4/kerfuffle_libxz.so
 %{_datadir}/apps/ark
 %{_datadir}/kde4/servicetypes/kerfufflePlugin.desktop
 %{_datadir}/kde4/services/ark_part.desktop
+%{_datadir}/kde4/services/kerfuffle_7zip.desktop
 %{_datadir}/kde4/services/kerfuffle_libarchive.desktop
+%{_datadir}/kde4/services/kerfuffle_libzip.desktop
+%{_datadir}/kde4/services/kerfuffle_rar.desktop
 %{_datadir}/kde4/services/kerfuffle_libgz.desktop
-%{_datadir}/kde4/services/ark_dndextract.desktop
-%{_datadir}/kde4/services/kcm_lirc.desktop
-%{_datadir}/kde4/services/kerfuffle_7z.desktop
-%{_datadir}/kde4/services/kerfuffle_clirar.desktop
-%{_datadir}/kde4/services/kerfuffle_clizip.desktop
-%{_datadir}/kde4/services/kerfuffle_libbz2.desktop
-%{_datadir}/kde4/services/kerfuffle_libxz.desktop
 %{_datadir}/kde4/services/ServiceMenus/ark_addtoservicemenu.desktop
 %{_datadir}/kde4/services/ServiceMenus/ark_servicemenu.desktop
 %{_datadir}/config.kcfg/ark.kcfg
