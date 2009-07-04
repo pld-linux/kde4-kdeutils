@@ -630,6 +630,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/printer-applet/printer-applet.py
 %{_datadir}/apps/printer-applet/printer-applet.ui
 %{_datadir}/apps/printer-applet/printer-appletui.rc
+%{_datadir}/apps/printer-applet/authconn.py
+%{_datadir}/apps/printer-applet/debug.py
+%{_datadir}/apps/printer-applet/monitor.py
+%{_datadir}/apps/printer-applet/printer-applet.notifyrc
+%{_datadir}/apps/printer-applet/statereason.py
 %{_datadir}/autostart/printer-applet.desktop
 
 %files irkick
@@ -642,11 +647,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libkdelirc_shared.so.1.0.0
 %{_desktopdir}/kde4/irkick.desktop
 %{_datadir}/apps/irkick/irkick.notifyrc
-%{_datadir}/apps/printer-applet/authconn.py
-%{_datadir}/apps/printer-applet/debug.py
-%{_datadir}/apps/printer-applet/monitor.py
-%{_datadir}/apps/printer-applet/printer-applet.notifyrc
-%{_datadir}/apps/printer-applet/statereason.py
 %{_datadir}/apps/profiles/amarok.profile.xml
 %{_datadir}/apps/profiles/dragonplayer.profile.xml
 %{_datadir}/apps/profiles/klauncher.profile.xml
