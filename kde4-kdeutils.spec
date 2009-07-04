@@ -14,7 +14,7 @@ Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
 Version:	4.2.95
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
@@ -421,6 +421,18 @@ functionality. IRKick is the server component of that infrastructure.
 %description irkick -l pl.UTF-8
 irkick.
 
+%package profiles
+Summary:	KDE Profiles for Aplications
+Summary(pl.UTF-8):	Profile aplikacji dla KDE
+Group:		X11/Applications
+Requires:	kde4-kdebase >= %{version}
+
+%description profiles
+Profiles for aplications.
+
+%description profiles -l pl.UTF-8
+Profile do aplikacji.
+
 %prep
 %setup -q -n %{orgname}-%{version}
 
@@ -482,6 +494,20 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/liboktetagui.so
 %attr(755,root,root) %{_libdir}/liboktetacore.so
 %attr(755,root,root) %{_libdir}/libkdelirc_shared.so
+
+%files profiles
+%defattr(644,root,root,755)
+%{_datadir}/apps/profiles/amarok.profile.xml
+%{_datadir}/apps/profiles/dragonplayer.profile.xml
+%{_datadir}/apps/profiles/klauncher.profile.xml
+%{_datadir}/apps/profiles/kmix.profile.xml
+%{_datadir}/apps/profiles/konqueror.profile.xml
+%{_datadir}/apps/profiles/noatun.profile.xml
+%{_datadir}/apps/profiles/okular.profile.xml
+%{_datadir}/apps/profiles/profile.dtd
+%{_datadir}/apps/profiles/shutdown.profile.xml
+%{_datadir}/apps/profiles/suspend.profile.xml
+%{_datadir}/apps/profiles/vlc.profile.xml
 
 %files ark -f ark.lang
 %defattr(644,root,root,755)
@@ -650,17 +676,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libkdelirc_shared.so.1.0.0
 %{_desktopdir}/kde4/irkick.desktop
 %{_datadir}/apps/irkick/irkick.notifyrc
-%{_datadir}/apps/profiles/amarok.profile.xml
-%{_datadir}/apps/profiles/dragonplayer.profile.xml
-%{_datadir}/apps/profiles/klauncher.profile.xml
-%{_datadir}/apps/profiles/kmix.profile.xml
-%{_datadir}/apps/profiles/konqueror.profile.xml
-%{_datadir}/apps/profiles/noatun.profile.xml
-%{_datadir}/apps/profiles/okular.profile.xml
-%{_datadir}/apps/profiles/profile.dtd
-%{_datadir}/apps/profiles/shutdown.profile.xml
-%{_datadir}/apps/profiles/suspend.profile.xml
-%{_datadir}/apps/profiles/vlc.profile.xml
 %{_datadir}/apps/remotes/AppleRemote.remote.xml
 %{_datadir}/apps/remotes/AsusDH.remote.xml
 %{_datadir}/apps/remotes/RM-0010.remote.xml
