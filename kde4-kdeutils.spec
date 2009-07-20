@@ -676,6 +676,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %ghost %{_libdir}/libkdelirc_shared.so.?
 %attr(755,root,root) %{_libdir}/libkdelirc_shared.so.1.0.0
 %{_desktopdir}/kde4/irkick.desktop
+%dir %{_datadir}/apps/irkick
 %{_datadir}/apps/irkick/irkick.notifyrc
 %{_datadir}/apps/remotes/AppleRemote.remote.xml
 %{_datadir}/apps/remotes/AsusDH.remote.xml
