@@ -3,7 +3,8 @@
 #
 %define		_state		stable
 %define		orgname		kdeutils
-%define		qtver		4.5.0
+%define		qtver		4.5.2
+
 Summary:	K Desktop Environment - utilities
 Summary(es.UTF-8):	KDE - Utilitarios
 Summary(ja.UTF-8):	KDEデスクトップ環境 - ユーティリティ
@@ -13,12 +14,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.2.4
+Version:	4.3.0
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	e7214cb1e84d2e6793d3dbeb8f33a3fe
+# Source0-md5:	9d17d3d7bf25be5af1cbd4abf04e4c99
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtAssistant-devel >= %{qtver}
@@ -86,7 +87,8 @@ Utilitarios para KDE. Programas disponibles en este paquete:
  - KTimer.
 
 %description -l ja.UTF-8
-KDEデスクトップ環境用のユーティリティ 以下のようなパッケージが入っています。
+KDEデスクトップ環境用のユーティリティ
+以下のようなパッケージが入っています。
 
 - ark - アーカイブ操作ツール
 - kcalc - 電卓
@@ -126,7 +128,8 @@ Utilitários para o KDE. Programas disponíveis neste pacote:
  - ark - менеджер архивов tar/gzip,
  - kcalc - научный калькулятор,
  - kedit - простой текстовый редактор,
- - kfloppy - утилита для форматирования флоппи-дисков,
+ - kfloppy - утилита для форматирования
+   флоппи-дисков,
  - kjots - блокнот,
 
 %description -l uk.UTF-8
@@ -134,7 +137,8 @@ Utilitários para o KDE. Programas disponíveis neste pacote:
  - ark - менеджер архівів tar/gzip,
  - kcalc - научний калькулятор,
  - kedit - простий текстовий редактор,
- - kfloppy - утиліта для форматування флопі-дисків,
+ - kfloppy - утиліта для форматування
+   флопі-дисків,
  - kjots - нотатник,
 
 %package devel
@@ -149,8 +153,8 @@ This package includes the header files you will need to compile
 applications that use kdeutils libraries.
 
 %description devel -l pl.UTF-8
-Ten pakiet zawiera pliki nagłówkowe niezbędne do kompilacji aplikacji
-używających bibliotek kdeutils.
+Ten pakiet zawiera pliki nagłówkowe niezbędne do kompilacji
+aplikacji używających bibliotek kdeutils.
 
 %description devel -l pt_BR.UTF-8
 Arquivos de inclusão para desenvolvimento e compilação de programas
@@ -170,9 +174,9 @@ Ark is a program for managing and quickly extracting archives. It
 supports arj, rar, zip, tar, zoo, lha and other formats.
 
 %description ark -l pl.UTF-8
-Ark jest programem służącym do zarządzania i szybkiego rozpakowywania
-archiwów. Obsługuje archiwa arj, rar, zip, tar, zoo, lha oraz inne
-formaty.
+Ark jest programem służącym do zarządzania i szybkiego
+rozpakowywania archiwów. Obsługuje archiwa arj, rar, zip, tar, zoo,
+lha oraz inne formaty.
 
 %description ark -l pt_BR.UTF-8
 Gerenciador de pacotes TAR/comprimidos do KDE.
@@ -309,8 +313,9 @@ kgpg is a simple, free, open source KDE frontend for gpg. It features
 - drag & drop encryption + clipboard en/decryption
 
 %description kgpg -l pl.UTF-8
-kgpg jest prostą, darmową, z otwartymi źródłami, graficzną nakładką na
-gpg przeznaczoną dla KDE. Ma następujące możliwości:
+kgpg jest prostą, darmową, z otwartymi źródłami, graficzną
+nakładką na gpg przeznaczoną dla KDE. Ma następujące
+możliwości:
 - tryb edytora umożliwiający napisanie/wklejenie tekstu oraz
   zaszyfrowanie/odszyfrowanie/podpisanie/sprawdzenie go,
 - zarządzanie kluczami: import, eksport, usuwanie, podpisywanie,
@@ -318,8 +323,9 @@ gpg przeznaczoną dla KDE. Ma następujące możliwości:
 - integrację z Konquerorem: kliknięcie lewym przyciskiem na pliku w
   celu odszyfrowania/sprawdzenia go, kliknięcie prawym przyciskiem na
   pliku w celu zaszyfrowania/podpisania go,
-- szyfrowanie: obsługa szyfrów symetrycznych; wiele kluczy i domyślne
-  szyfrowanie kluczem; opcjonalnie niszczenie plików źródłowych,
+- szyfrowanie: obsługa szyfrów symetrycznych; wiele kluczy i
+  domyślne szyfrowanie kluczem; opcjonalnie niszczenie plików
+  źródłowych,
 - sygnatury: tworzenie i sprawdzanie oddzielonych i czysto tekstowych
   sygnatur,
 - szyfrowanie metodą przeciągnij-i-upuść oraz szyfrowanie i
@@ -356,8 +362,8 @@ delaying the execution of a command.
 
 %description ktimer -l pl.UTF-8
 To jest aplikacja timera dla KDE. Umożliwia wykonywanie poleceń po
-określonym czasie, zapętlanie poleceń, a także opóźnienie wykonywania
-poleceń.
+określonym czasie, zapętlanie poleceń, a także opóźnienie
+wykonywania poleceń.
 
 %description ktimer -l pt_BR.UTF-8
 Monitor de tempo em forma de mini-aplicativo.
@@ -400,8 +406,33 @@ KDE Printer Applet is a system tray utility which shows current print
 jobs and printer warnings or errors.
 
 %description printer-applet -l pl.UTF-8
-KDE Printer Applet to narzędzie tacki systemowej pokazujące bieżące
-zadania drukarki oraz ostrzeżenia i błędy.
+KDE Printer Applet to narzędzie tacki systemowej pokazujące
+bieżące zadania drukarki oraz ostrzeżenia i błędy.
+
+%package irkick
+Summary:	KDE Irkick
+Summary(pl.UTF-8):	Irkick dla KDE
+Group:		X11/Applications
+Requires:	kde4-kdebase >= %{version}
+
+%description irkick
+KDE LIRC is the infrastructure for the KDE's Infrared Remote Control
+functionality. IRKick is the server component of that infrastructure.
+
+%description irkick -l pl.UTF-8
+irkick.
+
+%package profiles
+Summary:	KDE Profiles for Aplications
+Summary(pl.UTF-8):	Profile aplikacji dla KDE
+Group:		X11/Applications
+Requires:	kde4-kdebase >= %{version}
+
+%description profiles
+Profiles for aplications.
+
+%description profiles -l pl.UTF-8
+Profile do aplikacji.
 
 %prep
 %setup -q -n %{orgname}-%{version}
@@ -411,6 +442,7 @@ install -d build
 cd build
 %cmake \
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
+	-DLIB_INSTALL_DIR=%{_libdir} \
 	-DSYSCONF_INSTALL_DIR=%{_sysconfdir} \
 	-DINSTALL_PRINTER_APPLET=TRUE \
 	-DCMAKE_BUILD_TYPE=%{!?debug:release}%{?debug:debug} \
@@ -454,32 +486,57 @@ rm -rf $RPM_BUILD_ROOT
 %post	superkaramba	-p /sbin/ldconfig
 %postun	superkaramba	-p /sbin/ldconfig
 
+%post	irkick	-p /sbin/ldconfig
+%postun	irkick	-p /sbin/ldconfig
+
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libkerfuffle.so
 %attr(755,root,root) %{_libdir}/libsuperkaramba.so
 %attr(755,root,root) %{_libdir}/liboktetagui.so
 %attr(755,root,root) %{_libdir}/liboktetacore.so
+%attr(755,root,root) %{_libdir}/libkdelirc_shared.so
+
+%files profiles
+%defattr(644,root,root,755)
+%{_datadir}/apps/profiles/amarok.profile.xml
+%{_datadir}/apps/profiles/dragonplayer.profile.xml
+%{_datadir}/apps/profiles/klauncher.profile.xml
+%{_datadir}/apps/profiles/kmix.profile.xml
+%{_datadir}/apps/profiles/konqueror.profile.xml
+%{_datadir}/apps/profiles/noatun.profile.xml
+%{_datadir}/apps/profiles/okular.profile.xml
+%{_datadir}/apps/profiles/profile.dtd
+%{_datadir}/apps/profiles/shutdown.profile.xml
+%{_datadir}/apps/profiles/suspend.profile.xml
+%{_datadir}/apps/profiles/vlc.profile.xml
 
 %files ark -f ark.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/ark
 %attr(755,root,root) %{_libdir}/kde4/libarkpart.so
-%attr(755,root,root) %{_libdir}/kde4/kerfuffle_7zip.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libarchive.so
-%attr(755,root,root) %{_libdir}/kde4/kerfuffle_libzip.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libgz.so
-%attr(755,root,root) %{_libdir}/kde4/kerfuffle_rar.so
 %attr(755,root,root) %ghost %{_libdir}/libkerfuffle.so.?
 %attr(755,root,root) %{_libdir}/libkerfuffle.so.*.*.*
+%attr(755,root,root) %{_libdir}/kde4/kerfuffle_7z.so
+%attr(755,root,root) %{_libdir}/kde4/kerfuffle_clirar.so
+%attr(755,root,root) %{_libdir}/kde4/kerfuffle_clizip.so
+%attr(755,root,root) %{_libdir}/kde4/kerfuffle_libbz2.so
+%attr(755,root,root) %{_libdir}/kde4/kerfuffle_libxz.so
+%attr(755,root,root) %{_libdir}/kde4/libextracthere.so
 %{_datadir}/apps/ark
 %{_datadir}/kde4/servicetypes/kerfufflePlugin.desktop
 %{_datadir}/kde4/services/ark_part.desktop
-%{_datadir}/kde4/services/kerfuffle_7zip.desktop
 %{_datadir}/kde4/services/kerfuffle_libarchive.desktop
-%{_datadir}/kde4/services/kerfuffle_libzip.desktop
-%{_datadir}/kde4/services/kerfuffle_rar.desktop
 %{_datadir}/kde4/services/kerfuffle_libgz.desktop
+%{_datadir}/kde4/services/ark_dndextract.desktop
+%{_datadir}/kde4/services/kcm_lirc.desktop
+%{_datadir}/kde4/services/kerfuffle_7z.desktop
+%{_datadir}/kde4/services/kerfuffle_clirar.desktop
+%{_datadir}/kde4/services/kerfuffle_clizip.desktop
+%{_datadir}/kde4/services/kerfuffle_libbz2.desktop
+%{_datadir}/kde4/services/kerfuffle_libxz.desktop
 %{_datadir}/kde4/services/ServiceMenus/ark_addtoservicemenu.desktop
 %{_datadir}/kde4/services/ServiceMenus/ark_servicemenu.desktop
 %{_datadir}/config.kcfg/ark.kcfg
@@ -605,4 +662,36 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/printer-applet/printer-applet.py
 %{_datadir}/apps/printer-applet/printer-applet.ui
 %{_datadir}/apps/printer-applet/printer-appletui.rc
+%{_datadir}/apps/printer-applet/authconn.py
+%{_datadir}/apps/printer-applet/debug.py
+%{_datadir}/apps/printer-applet/monitor.py
+%{_datadir}/apps/printer-applet/printer-applet.notifyrc
+%{_datadir}/apps/printer-applet/statereason.py
 %{_datadir}/autostart/printer-applet.desktop
+
+%files irkick
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/irkick
+%attr(755,root,root) %{_libdir}/kde4/kcm_lirc.so
+%attr(755,root,root) %{_libdir}/libkdeinit4_irkick.so
+%attr(755,root,root) %ghost %{_libdir}/libkdelirc_shared.so.?
+%attr(755,root,root) %{_libdir}/libkdelirc_shared.so.1.0.0
+%{_desktopdir}/kde4/irkick.desktop
+%dir %{_datadir}/apps/irkick
+%{_datadir}/apps/irkick/irkick.notifyrc
+%{_datadir}/apps/remotes/AppleRemote.remote.xml
+%{_datadir}/apps/remotes/AsusDH.remote.xml
+%{_datadir}/apps/remotes/RM-0010.remote.xml
+%{_datadir}/apps/remotes/cimr100.remote.xml
+%{_datadir}/apps/remotes/hauppauge.remote.xml
+%{_datadir}/apps/remotes/packbell.remote.xml
+%{_datadir}/apps/remotes/remote.dtd
+%{_datadir}/apps/remotes/sherwood.remote.xml
+%{_datadir}/apps/remotes/sonytv.remote.xml
+%{_datadir}/autostart/irkick.desktop
+%{_iconsdir}/hicolor/22x22/apps/irkick.png
+%{_iconsdir}/oxygen/*x*/devices/infrared-remote.png
+%{_iconsdir}/oxygen/*x*/actions/irkickflash.png
+%{_iconsdir}/oxygen/*x*/actions/irkickoff.png
+%{_kdedocdir}/en/irkick
+%{_kdedocdir}/en/kcmlirc
