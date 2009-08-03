@@ -445,7 +445,7 @@ cd build
 	-DLIB_INSTALL_DIR=%{_libdir} \
 	-DSYSCONF_INSTALL_DIR=%{_sysconfdir} \
 	-DINSTALL_PRINTER_APPLET=TRUE \
-	-DCMAKE_BUILD_TYPE=%{!?debug:release}%{?debug:debug} \
+	-DCMAKE_BUILD_TYPE=%{!?debug:Release}%{?debug:Debug} \
 %if "%{_lib}" == "lib64"
 	-DLIB_SUFFIX=64 \
 %endif
