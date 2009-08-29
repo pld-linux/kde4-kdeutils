@@ -14,12 +14,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.3.0
+Version:	4.3.1
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	9d17d3d7bf25be5af1cbd4abf04e4c99
+# Source0-md5:	69491ba185ba8ecb2dd4860d7048a88a
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtAssistant-devel >= %{qtver}
@@ -504,7 +504,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/profiles/klauncher.profile.xml
 %{_datadir}/apps/profiles/kmix.profile.xml
 %{_datadir}/apps/profiles/konqueror.profile.xml
-%{_datadir}/apps/profiles/noatun.profile.xml
+%{_datadir}/apps/profiles/kscd.profile.xml
 %{_datadir}/apps/profiles/okular.profile.xml
 %{_datadir}/apps/profiles/profile.dtd
 %{_datadir}/apps/profiles/shutdown.profile.xml
