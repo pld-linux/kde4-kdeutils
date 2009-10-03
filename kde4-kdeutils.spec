@@ -14,12 +14,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.3.1
+Version:	4.3.2
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	69491ba185ba8ecb2dd4860d7048a88a
+# Source0-md5:	b5e72292ed1504f8ee5a82a388af3b04
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtAssistant-devel >= %{qtver}
@@ -504,7 +504,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/profiles/klauncher.profile.xml
 %{_datadir}/apps/profiles/kmix.profile.xml
 %{_datadir}/apps/profiles/konqueror.profile.xml
-%{_datadir}/apps/profiles/kscd.profile.xml
+#%{_datadir}/apps/profiles/kscd.profile.xml
 %{_datadir}/apps/profiles/okular.profile.xml
 %{_datadir}/apps/profiles/profile.dtd
 %{_datadir}/apps/profiles/shutdown.profile.xml
@@ -554,7 +554,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/okteta
 %attr(755,root,root) %{_libdir}/kde4/libarkpart.so
 %attr(755,root,root) %{_libdir}/kde4/libkbytearrayedit.so
-%attr(755,root,root) %{_libdir}/kde4/liboktetapart.so
+%attr(755,root,root) %{_libdir}/kde4/oktetapart.so
 %attr(755,root,root) %ghost %{_libdir}/liboktetacore.so.?
 %attr(755,root,root) %{_libdir}/liboktetacore.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/liboktetagui.so.?
