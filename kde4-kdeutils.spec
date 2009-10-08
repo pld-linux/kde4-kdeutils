@@ -1,9 +1,10 @@
 # TODO:
 # - python-PyKDE4 whatever for printer-applet
 #
-%define		_state		stable
+%define		_state		unstable
 %define		orgname		kdeutils
 %define		qtver		4.5.3
+%define		snap		svn1027298
 
 Summary:	K Desktop Environment - utilities
 Summary(es.UTF-8):	KDE - Utilitarios
@@ -14,12 +15,13 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.3.2
+Version:	4.3.69
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	b5e72292ed1504f8ee5a82a388af3b04
+#Source0:      ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
+Source0:       ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}%{snap}.tar.bz2
+# Source0-md5: 8686f074cbb364d5231f9cba56c6bc3d
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtAssistant-devel >= %{qtver}
@@ -435,7 +437,8 @@ Profiles for aplications.
 Profile do aplikacji.
 
 %prep
-%setup -q -n %{orgname}-%{version}
+%setup -q -n %{orgname}-%{version}%{snap}
+#%setup -q -n %{orgname}-%{version}
 
 %build
 install -d build
@@ -496,6 +499,17 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/liboktetagui.so
 %attr(755,root,root) %{_libdir}/liboktetacore.so
 %attr(755,root,root) %{_libdir}/libkdelirc_shared.so
+%attr(755,root,root) %{_libdir}/libkastencontrollers.so
+%attr(755,root,root) %{_libdir}/libkastencore.so
+%attr(755,root,root) %{_libdir}/libkastengui.so
+%attr(755,root,root) %{_libdir}/liboktetakastencontrollers.so
+%attr(755,root,root) %{_libdir}/liboktetakastencore.so
+%attr(755,root,root) %{_libdir}/liboktetakastengui.so
+
+%{_includedir}/KDE/Kasten
+%{_includedir}/KDE/Okteta
+%{_includedir}/kasten
+%{_includedir}/okteta
 
 %files profiles
 %defattr(644,root,root,755)
@@ -514,12 +528,12 @@ rm -rf $RPM_BUILD_ROOT
 %files ark -f ark.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/ark
-%attr(755,root,root) %{_libdir}/kde4/libarkpart.so
+%attr(755,root,root) %{_libdir}/kde4/arkpart.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libarchive.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libgz.so
 %attr(755,root,root) %ghost %{_libdir}/libkerfuffle.so.?
 %attr(755,root,root) %{_libdir}/libkerfuffle.so.*.*.*
-%attr(755,root,root) %{_libdir}/kde4/kerfuffle_7z.so
+%attr(755,root,root) %{_libdir}/kde4/kerfuffle_cli7z.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_clirar.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_clizip.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libbz2.so
@@ -532,7 +546,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/kerfuffle_libgz.desktop
 %{_datadir}/kde4/services/ark_dndextract.desktop
 %{_datadir}/kde4/services/kcm_lirc.desktop
-%{_datadir}/kde4/services/kerfuffle_7z.desktop
+%{_datadir}/kde4/services/kerfuffle_cli7z.desktop
 %{_datadir}/kde4/services/kerfuffle_clirar.desktop
 %{_datadir}/kde4/services/kerfuffle_clizip.desktop
 %{_datadir}/kde4/services/kerfuffle_libbz2.desktop
@@ -552,21 +566,39 @@ rm -rf $RPM_BUILD_ROOT
 %files okteta -f okteta.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/okteta
-%attr(755,root,root) %{_libdir}/kde4/libarkpart.so
 %attr(755,root,root) %{_libdir}/kde4/libkbytearrayedit.so
 %attr(755,root,root) %{_libdir}/kde4/oktetapart.so
 %attr(755,root,root) %ghost %{_libdir}/liboktetacore.so.?
 %attr(755,root,root) %{_libdir}/liboktetacore.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/liboktetagui.so.?
 %attr(755,root,root) %{_libdir}/liboktetagui.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/liboktetakastencore.so.?
+%attr(755,root,root) %{_libdir}/liboktetakastencore.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/liboktetakastencontrollers.so.?
+%attr(755,root,root) %{_libdir}/liboktetakastencontrollers.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/liboktetakastengui.so.?
+%attr(755,root,root) %{_libdir}/liboktetakastengui.so.*.*.*
+
+%attr(755,root,root) %{_libdir}/kde4/plugins/designer/oktetadesignerplugin.so
+
 %{_desktopdir}/kde4/okteta.desktop
 %dir %{_datadir}/apps/okteta
 %{_datadir}/apps/okteta/oktetaui.rc
 %dir %{_datadir}/apps/oktetapart
-%{_datadir}/apps/oktetapart/oktetapartui.rc
+%{_datadir}/apps/oktetapart/oktetapartbrowserui.rc
+%{_datadir}/apps/oktetapart/oktetapartreadonlyui.rc
+%{_datadir}/apps/oktetapart/oktetapartreadwriteui.rc
 %{_iconsdir}/hicolor/*x*/apps/okteta.png
 %{_datadir}/kde4/services/kbytearrayedit.desktop
 %{_datadir}/kde4/services/oktetapart.desktop
+
+#kasten
+%attr(755,root,root) %ghost %{_libdir}/libkastencore.so.?
+%attr(755,root,root) %{_libdir}/libkastencore.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libkastencontrollers.so.?
+%attr(755,root,root) %{_libdir}/libkastencontrollers.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libkastengui.so.?
+%attr(755,root,root) %{_libdir}/libkastengui.so.*.*.*
 
 %files kcalc -f kcalc.lang
 %defattr(644,root,root,755)
@@ -605,7 +637,7 @@ rm -rf $RPM_BUILD_ROOT
 %files kfloppy -f kfloppy.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kfloppy
-%{_datadir}/kde4/services/ServiceMenus/floppy_format.desktop
+#%{_datadir}/kde4/services/ServiceMenus/floppy_format.desktop
 %{_desktopdir}/kde4/KFloppy.desktop
 %{_iconsdir}/*/*/apps/kfloppy.*
 
