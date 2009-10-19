@@ -3,8 +3,8 @@
 #
 %define		_state		unstable
 %define		orgname		kdeutils
-%define		qtver		4.5.3
-%define		snap		svn1027298
+%define		qtver		4.6.0
+%define		snap		svn1035674
 
 Summary:	K Desktop Environment - utilities
 Summary(es.UTF-8):	KDE - Utilitarios
@@ -15,13 +15,13 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.3.69
+Version:	4.3.72
 Release:	1
 License:	GPL
 Group:		X11/Applications
 #Source0:      ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
 Source0:       ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}%{snap}.tar.bz2
-# Source0-md5: 8686f074cbb364d5231f9cba56c6bc3d
+# Source0-md5:	ad36db5d6357174a44cab01a97653738
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtAssistant-devel >= %{qtver}
@@ -465,17 +465,17 @@ rm -rf $RPM_BUILD_ROOT
 # unsupported
 rm -rf $RPM_BUILD_ROOT%{_datadir}/icons/locolor
 
-%find_lang ark			--with-kde
-%find_lang okteta		--with-kde
-%find_lang kcalc		--with-kde
-%find_lang kcharselect		--with-kde
-%find_lang kdf			--with-kde
-%find_lang kfloppy		--with-kde
-%find_lang kgpg			--with-kde
-%find_lang ktimer		--with-kde
-%find_lang kwallet		--with-kde
-%find_lang superkaramba		--with-kde
-%find_lang ktimer		--with-kde
+#%find_lang ark			--with-kde
+#%find_lang okteta		--with-kde
+#%find_lang kcalc		--with-kde
+#%find_lang kcharselect		--with-kde
+#%find_lang kdf			--with-kde
+#%find_lang kfloppy		--with-kde
+#%find_lang kgpg			--with-kde
+#%find_lang ktimer		--with-kde
+#%find_lang kwallet		--with-kde
+#%find_lang superkaramba		--with-kde
+#%find_lang ktimer		--with-kde
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -525,7 +525,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/profiles/suspend.profile.xml
 %{_datadir}/apps/profiles/vlc.profile.xml
 
-%files ark -f ark.lang
+%files ark
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/ark
 %attr(755,root,root) %{_libdir}/kde4/arkpart.so
@@ -555,7 +555,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/ServiceMenus/ark_servicemenu.desktop
 %{_datadir}/config.kcfg/ark.kcfg
 %{_desktopdir}/kde4/ark.desktop
-%{_mandir}/man1/ark.1.*
+#%{_mandir}/man1/ark.1.*
 ## ?
 %attr(755,root,root) %{_bindir}/sweeper
 %{_desktopdir}/kde4/sweeper.desktop
@@ -563,7 +563,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/sweeper/sweeperui.rc
 %{_datadir}/dbus-1/interfaces/org.kde.sweeper.xml
 
-%files okteta -f okteta.lang
+%files okteta
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/okteta
 %attr(755,root,root) %{_libdir}/kde4/libkbytearrayedit.so
@@ -600,7 +600,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %ghost %{_libdir}/libkastengui.so.?
 %attr(755,root,root) %{_libdir}/libkastengui.so.*.*.*
 
-%files kcalc -f kcalc.lang
+%files kcalc
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kcalc
 %attr(755,root,root) %{_libdir}/libkdeinit4_kcalc.so
@@ -610,7 +610,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kde4/kcalc.desktop
 #%{_iconsdir}/*/*/apps/kcalc.*
 
-%files kcharselect -f kcharselect.lang
+%files kcharselect
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kcharselect
 %{_datadir}/apps/kcharselect
@@ -621,7 +621,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kdessh
 
-%files kdf -f kdf.lang
+%files kdf
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kdf
 %attr(755,root,root) %{_bindir}/kwikdisk
@@ -634,14 +634,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/*/*/apps/kdf.*
 %{_iconsdir}/*/*/apps/kwikdisk.*
 
-%files kfloppy -f kfloppy.lang
+%files kfloppy
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kfloppy
 #%{_datadir}/kde4/services/ServiceMenus/floppy_format.desktop
 %{_desktopdir}/kde4/KFloppy.desktop
 %{_iconsdir}/*/*/apps/kfloppy.*
 
-%files kgpg -f kgpg.lang
+%files kgpg
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kgpg
 %{_datadir}/apps/kgpg
@@ -654,13 +654,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/*/*/apps/kgpg.*
 %{_datadir}/dbus-1/interfaces/org.kde.kgpg.Key.xml
 
-%files ktimer -f ktimer.lang
+%files ktimer
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/ktimer
 %{_desktopdir}/kde4/ktimer.desktop
 %{_iconsdir}/*/*/*/ktimer.png
 
-%files kwalletmanager -f kwallet.lang
+%files kwalletmanager
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kwalletmanager
 %attr(755,root,root) %{_libdir}/kde4/kcm_kwallet.so
@@ -671,7 +671,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kde4/kwalletmanager-kwalletd.desktop
 %{_iconsdir}/hicolor/*/apps/kwalletmanager*.png
 
-%files superkaramba -f superkaramba.lang
+%files superkaramba
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/superkaramba
 %attr(755,root,root) %{_libdir}/libsuperkaramba.so.*.*.*
@@ -711,19 +711,19 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kde4/irkick.desktop
 %dir %{_datadir}/apps/irkick
 %{_datadir}/apps/irkick/irkick.notifyrc
-%{_datadir}/apps/remotes/AppleRemote.remote.xml
-%{_datadir}/apps/remotes/AsusDH.remote.xml
-%{_datadir}/apps/remotes/RM-0010.remote.xml
-%{_datadir}/apps/remotes/cimr100.remote.xml
-%{_datadir}/apps/remotes/hauppauge.remote.xml
-%{_datadir}/apps/remotes/packbell.remote.xml
-%{_datadir}/apps/remotes/remote.dtd
-%{_datadir}/apps/remotes/sherwood.remote.xml
-%{_datadir}/apps/remotes/sonytv.remote.xml
+#%{_datadir}/apps/remotes/AppleRemote.remote.xml
+#%{_datadir}/apps/remotes/AsusDH.remote.xml
+#%{_datadir}/apps/remotes/RM-0010.remote.xml
+#%{_datadir}/apps/remotes/cimr100.remote.xml
+#%{_datadir}/apps/remotes/hauppauge.remote.xml
+#%{_datadir}/apps/remotes/packbell.remote.xml
+#%{_datadir}/apps/remotes/remote.dtd
+#%{_datadir}/apps/remotes/sherwood.remote.xml
+#%{_datadir}/apps/remotes/sonytv.remote.xml
 %{_datadir}/autostart/irkick.desktop
 %{_iconsdir}/hicolor/22x22/apps/irkick.png
 %{_iconsdir}/oxygen/*x*/devices/infrared-remote.png
 %{_iconsdir}/oxygen/*x*/actions/irkickflash.png
 %{_iconsdir}/oxygen/*x*/actions/irkickoff.png
-%{_kdedocdir}/en/irkick
-%{_kdedocdir}/en/kcmlirc
+#%{_kdedocdir}/en/irkick
+#%{_kdedocdir}/en/kcmlirc
