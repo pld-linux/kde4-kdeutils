@@ -20,7 +20,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications
 #Source0:      ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-Source0:       ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}%{snap}.tar.bz2
+Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}%{snap}.tar.bz2
 # Source0-md5:	ad36db5d6357174a44cab01a97653738
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
@@ -44,6 +44,7 @@ BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	cmake >= 2.6.3
 BuildRequires:	gmp-devel
 BuildRequires:	kde4-kdebase-devel >= %{version}
+BuildRequires:	kde4-kdelibs-devel
 BuildRequires:	kde4-kdepimlibs-devel >= %{version}
 BuildRequires:	libarchive-devel
 BuildRequires:	libtool
@@ -51,11 +52,18 @@ BuildRequires:	libxml2-progs
 BuildRequires:	libzip-devel
 BuildRequires:	net-snmp-devel
 BuildRequires:	pkgconfig
+BuildRequires:	python-PyKDE4
 BuildRequires:	python-PyQt4-devel
 BuildRequires:	python-devel
 BuildRequires:	python-modules
+BuildRequires:	qca-devel >= 2.0.0
+BuildRequires:	qimageblitz-devel
+BuildRequires:	qt4-build
+BuildRequires:	qt4-qmake
+BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	system-config-printer
+BuildRequires:	xz-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
