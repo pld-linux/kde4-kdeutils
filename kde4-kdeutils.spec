@@ -15,13 +15,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.3.72
+Version:	4.3.80
 Release:	1
 License:	GPL
 Group:		X11/Applications
-#Source0:      ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}%{snap}.tar.bz2
-# Source0-md5:	ad36db5d6357174a44cab01a97653738
+Source0:      ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
+# Source0-md5:	a471e2dd438af142cee5c98302987f33
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtAssistant-devel >= %{qtver}
@@ -44,7 +43,7 @@ BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	cmake >= 2.6.3
 BuildRequires:	gmp-devel
 BuildRequires:	kde4-kdebase-devel >= %{version}
-BuildRequires:	kde4-kdelibs-devel
+BuildRequires:	kde4-kdelibs-devel >= %{version}
 BuildRequires:	kde4-kdepimlibs-devel >= %{version}
 BuildRequires:	libarchive-devel
 BuildRequires:	libtool
@@ -58,8 +57,8 @@ BuildRequires:	python-devel
 BuildRequires:	python-modules
 BuildRequires:	qca-devel >= 2.0.0
 BuildRequires:	qimageblitz-devel
-BuildRequires:	qt4-build
-BuildRequires:	qt4-qmake
+BuildRequires:	qt4-build >= %{qtver}
+BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	system-config-printer
@@ -445,8 +444,7 @@ Profiles for aplications.
 Profile do aplikacji.
 
 %prep
-%setup -q -n %{orgname}-%{version}%{snap}
-#%setup -q -n %{orgname}-%{version}
+%setup -q -n %{orgname}-%{version}
 
 %build
 install -d build
@@ -514,10 +512,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/liboktetakastencore.so
 %attr(755,root,root) %{_libdir}/liboktetakastengui.so
 
-%{_includedir}/KDE/Kasten
-%{_includedir}/KDE/Okteta
-%{_includedir}/kasten
-%{_includedir}/okteta
+#%{_includedir}/KDE/Kasten
+#%{_includedir}/KDE/Okteta
+#%{_includedir}/kasten
+#%{_includedir}/okteta
 
 %files profiles
 %defattr(644,root,root,755)
@@ -563,7 +561,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/ServiceMenus/ark_servicemenu.desktop
 %{_datadir}/config.kcfg/ark.kcfg
 %{_desktopdir}/kde4/ark.desktop
-#%{_mandir}/man1/ark.1.*
+%{_kdedocdir}/en/ark
+%{_mandir}/man1/ark.1.*
 ## ?
 %attr(755,root,root) %{_bindir}/sweeper
 %{_desktopdir}/kde4/sweeper.desktop
@@ -586,12 +585,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/liboktetakastencontrollers.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/liboktetakastengui.so.?
 %attr(755,root,root) %{_libdir}/liboktetakastengui.so.*.*.*
-
 %attr(755,root,root) %{_libdir}/kde4/plugins/designer/oktetadesignerplugin.so
-
 %{_desktopdir}/kde4/okteta.desktop
 %dir %{_datadir}/apps/okteta
 %{_datadir}/apps/okteta/oktetaui.rc
+%{_datadir}/config/structures.knsrc
 %dir %{_datadir}/apps/oktetapart
 %{_datadir}/apps/oktetapart/oktetapartbrowserui.rc
 %{_datadir}/apps/oktetapart/oktetapartreadonlyui.rc
@@ -599,7 +597,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/*x*/apps/okteta.png
 %{_datadir}/kde4/services/kbytearrayedit.desktop
 %{_datadir}/kde4/services/oktetapart.desktop
-
+%{_kdedocdir}/en/okteta
 #kasten
 %attr(755,root,root) %ghost %{_libdir}/libkastencore.so.?
 %attr(755,root,root) %{_libdir}/libkastencore.so.*.*.*
@@ -616,6 +614,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kconf_update/kcalcrc.upd
 %{_datadir}/config.kcfg/kcalc.kcfg
 %{_desktopdir}/kde4/kcalc.desktop
+%{_kdedocdir}/en/kcalc
 #%{_iconsdir}/*/*/apps/kcalc.*
 
 %files kcharselect
@@ -624,6 +623,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kcharselect
 %{_datadir}/apps/kconf_update/kcharselect.upd
 %{_desktopdir}/kde4/KCharSelect.desktop
+%{_kdedocdir}/en/kcharselect
 
 %files kdessh
 %defattr(644,root,root,755)
@@ -641,6 +641,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/*/*/apps/kcmdf.*
 %{_iconsdir}/*/*/apps/kdf.*
 %{_iconsdir}/*/*/apps/kwikdisk.*
+%{_kdedocdir}/en/kdf
 
 %files kfloppy
 %defattr(644,root,root,755)
@@ -648,6 +649,7 @@ rm -rf $RPM_BUILD_ROOT
 #%{_datadir}/kde4/services/ServiceMenus/floppy_format.desktop
 %{_desktopdir}/kde4/KFloppy.desktop
 %{_iconsdir}/*/*/apps/kfloppy.*
+%{_kdedocdir}/en/kfloppy
 
 %files kgpg
 %defattr(644,root,root,755)
@@ -661,12 +663,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kde4/kgpg.desktop
 %{_iconsdir}/*/*/apps/kgpg.*
 %{_datadir}/dbus-1/interfaces/org.kde.kgpg.Key.xml
+%{_kdedocdir}/en/kgpg
 
 %files ktimer
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/ktimer
 %{_desktopdir}/kde4/ktimer.desktop
 %{_iconsdir}/*/*/*/ktimer.png
+%{_kdedocdir}/en/ktimer
 
 %files kwalletmanager
 %defattr(644,root,root,755)
@@ -678,6 +682,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kde4/kwalletmanager.desktop
 %{_desktopdir}/kde4/kwalletmanager-kwalletd.desktop
 %{_iconsdir}/hicolor/*/apps/kwalletmanager*.png
+%{_kdedocdir}/en/kwallet
 
 %files superkaramba
 %defattr(644,root,root,755)
@@ -693,6 +698,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/plasma-scriptengine-superkaramba.desktop
 %{_desktopdir}/kde4/superkaramba.desktop
 %{_iconsdir}/[!l]*/*/*/superkaramba*.*
+%{_kdedocdir}/en/superkaramba
 
 %files printer-applet
 %defattr(644,root,root,755)
@@ -733,5 +739,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/oxygen/*x*/devices/infrared-remote.png
 %{_iconsdir}/oxygen/*x*/actions/irkickflash.png
 %{_iconsdir}/oxygen/*x*/actions/irkickoff.png
-#%{_kdedocdir}/en/irkick
-#%{_kdedocdir}/en/kcmlirc
+%{_kdedocdir}/en/irkick
+%{_kdedocdir}/en/kcmlirc
