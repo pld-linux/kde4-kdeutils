@@ -15,12 +15,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.3.80
+Version:	4.3.85
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:      ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	a471e2dd438af142cee5c98302987f33
+# Source0-md5:	059424fb23af5bda086f52595f45afb1
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtAssistant-devel >= %{qtver}
@@ -585,11 +585,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/liboktetakastencontrollers.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/liboktetakastengui.so.?
 %attr(755,root,root) %{_libdir}/liboktetakastengui.so.*.*.*
-%attr(755,root,root) %{_libdir}/kde4/plugins/designer/oktetadesignerplugin.so
 %{_desktopdir}/kde4/okteta.desktop
 %dir %{_datadir}/apps/okteta
 %{_datadir}/apps/okteta/oktetaui.rc
-%{_datadir}/config/structures.knsrc
 %dir %{_datadir}/apps/oktetapart
 %{_datadir}/apps/oktetapart/oktetapartbrowserui.rc
 %{_datadir}/apps/oktetapart/oktetapartreadonlyui.rc
