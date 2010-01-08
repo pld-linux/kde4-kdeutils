@@ -15,12 +15,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.3.85
+Version:	4.3.90
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:      ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	059424fb23af5bda086f52595f45afb1
+# Source0-md5:	0128f64e54f3b610a5284afd5b274c2b
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtAssistant-devel >= %{qtver}
@@ -623,9 +623,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kde4/KCharSelect.desktop
 %{_kdedocdir}/en/kcharselect
 
-%files kdessh
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/kdessh
+#%files kdessh
+#%defattr(644,root,root,755)
+#%attr(755,root,root) %{_bindir}/kdessh
 
 %files kdf
 %defattr(644,root,root,755)
