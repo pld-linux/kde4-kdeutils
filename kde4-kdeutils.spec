@@ -14,12 +14,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.3.4
+Version:	4.3.5
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	576852bb88515ccbbb859e245c939d31
+# Source0-md5:	7321bc385bd0666bb32d5ec467a05244
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtAssistant-devel >= %{qtver}
@@ -41,7 +41,6 @@ BuildRequires:	QtXmlPatterns-devel >= %{qtver}
 BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	cmake >= 2.6.3
 BuildRequires:	gmp-devel
-BuildRequires:	kde4-kdebase-devel >= %{version}
 BuildRequires:	kde4-kdelibs-experimental-devel
 BuildRequires:	kde4-kdepimlibs-devel >= %{version}
 BuildRequires:	libarchive-devel
@@ -532,13 +531,13 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_clizip.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libbz2.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libxz.so
-%attr(755,root,root) %{_libdir}/kde4/libextracthere.so
+#%attr(755,root,root) %{_libdir}/kde4/libextracthere.so
 %{_datadir}/apps/ark
 %{_datadir}/kde4/servicetypes/kerfufflePlugin.desktop
 %{_datadir}/kde4/services/ark_part.desktop
 %{_datadir}/kde4/services/kerfuffle_libarchive.desktop
 %{_datadir}/kde4/services/kerfuffle_libgz.desktop
-%{_datadir}/kde4/services/ark_dndextract.desktop
+#%{_datadir}/kde4/services/ark_dndextract.desktop
 %{_datadir}/kde4/services/kcm_lirc.desktop
 %{_datadir}/kde4/services/kerfuffle_7z.desktop
 %{_datadir}/kde4/services/kerfuffle_clirar.desktop
