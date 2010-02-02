@@ -3,7 +3,7 @@
 #
 %define		_state		unstable
 %define		orgname		kdeutils
-%define		qtver		4.6.0
+%define		qtver		4.6.1
 
 Summary:	K Desktop Environment - utilities
 Summary(es.UTF-8):	KDE - Utilitarios
