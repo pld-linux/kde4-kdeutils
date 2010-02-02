@@ -4,7 +4,6 @@
 %define		_state		unstable
 %define		orgname		kdeutils
 %define		qtver		4.6.0
-%define		snap		svn1035674
 
 Summary:	K Desktop Environment - utilities
 Summary(es.UTF-8):	KDE - Utilitarios
