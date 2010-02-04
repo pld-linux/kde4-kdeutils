@@ -1,7 +1,7 @@
 # TODO:
 # - python-PyKDE4 whatever for printer-applet
 #
-%define		_state		unstable
+%define		_state		stable
 %define		orgname		kdeutils
 %define		qtver		4.6.1
 
@@ -14,12 +14,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.3.98
+Version:	4.4.0
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	8b27bc785c27eda1b09735dd0998ac98
+# Source0-md5:	e744b82eb9edd229dfa5ca478221cd2e
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtAssistant-devel >= %{qtver}
