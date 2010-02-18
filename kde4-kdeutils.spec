@@ -3,7 +3,7 @@
 #
 %define		_state		stable
 %define		orgname		kdeutils
-%define		qtver		4.5.3
+%define		qtver		4.6.1
 
 Summary:	K Desktop Environment - utilities
 Summary(es.UTF-8):	KDE - Utilitarios
@@ -14,12 +14,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.3.5
+Version:	4.4.0
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	7321bc385bd0666bb32d5ec467a05244
+# Source0-md5:	e744b82eb9edd229dfa5ca478221cd2e
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtAssistant-devel >= %{qtver}
@@ -39,9 +39,9 @@ BuildRequires:	QtWebKit-devel >= %{qtver}
 BuildRequires:	QtXml-devel >= %{qtver}
 BuildRequires:	QtXmlPatterns-devel >= %{qtver}
 BuildRequires:	automoc4 >= 0.9.88
-BuildRequires:	cmake >= 2.6.3
+BuildRequires:	cmake >= 2.8.0
 BuildRequires:	gmp-devel
-BuildRequires:	kde4-kdelibs-experimental-devel
+BuildRequires:	kde4-kdelibs-devel >= %{version}
 BuildRequires:	kde4-kdepimlibs-devel >= %{version}
 BuildRequires:	libarchive-devel
 BuildRequires:	libtool
@@ -55,8 +55,8 @@ BuildRequires:	python-devel
 BuildRequires:	python-modules
 BuildRequires:	qca-devel >= 2.0.0
 BuildRequires:	qimageblitz-devel
-BuildRequires:	qt4-build
-BuildRequires:	qt4-qmake
+BuildRequires:	qt4-build >= %{qtver}
+BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	system-config-printer
@@ -469,17 +469,17 @@ rm -rf $RPM_BUILD_ROOT
 # unsupported
 rm -rf $RPM_BUILD_ROOT%{_datadir}/icons/locolor
 
-%find_lang ark			--with-kde
-%find_lang okteta		--with-kde
-%find_lang kcalc		--with-kde
-%find_lang kcharselect		--with-kde
-%find_lang kdf			--with-kde
-%find_lang kfloppy		--with-kde
-%find_lang kgpg			--with-kde
-%find_lang ktimer		--with-kde
-%find_lang kwallet		--with-kde
-%find_lang superkaramba		--with-kde
-%find_lang ktimer		--with-kde
+#%find_lang ark			--with-kde
+#%find_lang okteta		--with-kde
+#%find_lang kcalc		--with-kde
+#%find_lang kcharselect		--with-kde
+#%find_lang kdf			--with-kde
+#%find_lang kfloppy		--with-kde
+#%find_lang kgpg			--with-kde
+#%find_lang ktimer		--with-kde
+#%find_lang kwallet		--with-kde
+#%find_lang superkaramba		--with-kde
+#%find_lang ktimer		--with-kde
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -503,6 +503,17 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/liboktetagui.so
 %attr(755,root,root) %{_libdir}/liboktetacore.so
 %attr(755,root,root) %{_libdir}/libkdelirc_shared.so
+%attr(755,root,root) %{_libdir}/libkastencontrollers.so
+%attr(755,root,root) %{_libdir}/libkastencore.so
+%attr(755,root,root) %{_libdir}/libkastengui.so
+%attr(755,root,root) %{_libdir}/liboktetakastencontrollers.so
+%attr(755,root,root) %{_libdir}/liboktetakastencore.so
+%attr(755,root,root) %{_libdir}/liboktetakastengui.so
+
+#%{_includedir}/KDE/Kasten
+#%{_includedir}/KDE/Okteta
+#%{_includedir}/kasten
+#%{_includedir}/okteta
 
 %files profiles
 %defattr(644,root,root,755)
@@ -518,15 +529,15 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/profiles/suspend.profile.xml
 %{_datadir}/apps/profiles/vlc.profile.xml
 
-%files ark -f ark.lang
+%files ark
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/ark
-%attr(755,root,root) %{_libdir}/kde4/libarkpart.so
+%attr(755,root,root) %{_libdir}/kde4/arkpart.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libarchive.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libgz.so
 %attr(755,root,root) %ghost %{_libdir}/libkerfuffle.so.?
 %attr(755,root,root) %{_libdir}/libkerfuffle.so.*.*.*
-%attr(755,root,root) %{_libdir}/kde4/kerfuffle_7z.so
+%attr(755,root,root) %{_libdir}/kde4/kerfuffle_cli7z.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_clirar.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_clizip.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libbz2.so
@@ -539,7 +550,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/kerfuffle_libgz.desktop
 #%{_datadir}/kde4/services/ark_dndextract.desktop
 %{_datadir}/kde4/services/kcm_lirc.desktop
-%{_datadir}/kde4/services/kerfuffle_7z.desktop
+%{_datadir}/kde4/services/kerfuffle_cli7z.desktop
 %{_datadir}/kde4/services/kerfuffle_clirar.desktop
 %{_datadir}/kde4/services/kerfuffle_clizip.desktop
 %{_datadir}/kde4/services/kerfuffle_libbz2.desktop
@@ -548,6 +559,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/ServiceMenus/ark_servicemenu.desktop
 %{_datadir}/config.kcfg/ark.kcfg
 %{_desktopdir}/kde4/ark.desktop
+%{_kdedocdir}/en/ark
 %{_mandir}/man1/ark.1.*
 ## ?
 %attr(755,root,root) %{_bindir}/sweeper
@@ -556,26 +568,41 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/sweeper/sweeperui.rc
 %{_datadir}/dbus-1/interfaces/org.kde.sweeper.xml
 
-%files okteta -f okteta.lang
+%files okteta
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/okteta
-%attr(755,root,root) %{_libdir}/kde4/libarkpart.so
 %attr(755,root,root) %{_libdir}/kde4/libkbytearrayedit.so
 %attr(755,root,root) %{_libdir}/kde4/oktetapart.so
 %attr(755,root,root) %ghost %{_libdir}/liboktetacore.so.?
 %attr(755,root,root) %{_libdir}/liboktetacore.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/liboktetagui.so.?
 %attr(755,root,root) %{_libdir}/liboktetagui.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/liboktetakastencore.so.?
+%attr(755,root,root) %{_libdir}/liboktetakastencore.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/liboktetakastencontrollers.so.?
+%attr(755,root,root) %{_libdir}/liboktetakastencontrollers.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/liboktetakastengui.so.?
+%attr(755,root,root) %{_libdir}/liboktetakastengui.so.*.*.*
 %{_desktopdir}/kde4/okteta.desktop
 %dir %{_datadir}/apps/okteta
 %{_datadir}/apps/okteta/oktetaui.rc
 %dir %{_datadir}/apps/oktetapart
-%{_datadir}/apps/oktetapart/oktetapartui.rc
+%{_datadir}/apps/oktetapart/oktetapartbrowserui.rc
+%{_datadir}/apps/oktetapart/oktetapartreadonlyui.rc
+%{_datadir}/apps/oktetapart/oktetapartreadwriteui.rc
 %{_iconsdir}/hicolor/*x*/apps/okteta.png
 %{_datadir}/kde4/services/kbytearrayedit.desktop
 %{_datadir}/kde4/services/oktetapart.desktop
+%{_kdedocdir}/en/okteta
+#kasten
+%attr(755,root,root) %ghost %{_libdir}/libkastencore.so.?
+%attr(755,root,root) %{_libdir}/libkastencore.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libkastencontrollers.so.?
+%attr(755,root,root) %{_libdir}/libkastencontrollers.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libkastengui.so.?
+%attr(755,root,root) %{_libdir}/libkastengui.so.*.*.*
 
-%files kcalc -f kcalc.lang
+%files kcalc
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kcalc
 %attr(755,root,root) %{_libdir}/libkdeinit4_kcalc.so
@@ -583,20 +610,22 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kconf_update/kcalcrc.upd
 %{_datadir}/config.kcfg/kcalc.kcfg
 %{_desktopdir}/kde4/kcalc.desktop
+%{_kdedocdir}/en/kcalc
 #%{_iconsdir}/*/*/apps/kcalc.*
 
-%files kcharselect -f kcharselect.lang
+%files kcharselect
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kcharselect
 %{_datadir}/apps/kcharselect
 %{_datadir}/apps/kconf_update/kcharselect.upd
 %{_desktopdir}/kde4/KCharSelect.desktop
+%{_kdedocdir}/en/kcharselect
 
-%files kdessh
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/kdessh
+#%files kdessh
+#%defattr(644,root,root,755)
+#%attr(755,root,root) %{_bindir}/kdessh
 
-%files kdf -f kdf.lang
+%files kdf
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kdf
 %attr(755,root,root) %{_bindir}/kwikdisk
@@ -608,15 +637,17 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/*/*/apps/kcmdf.*
 %{_iconsdir}/*/*/apps/kdf.*
 %{_iconsdir}/*/*/apps/kwikdisk.*
+%{_kdedocdir}/en/kdf
 
-%files kfloppy -f kfloppy.lang
+%files kfloppy
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kfloppy
-%{_datadir}/kde4/services/ServiceMenus/floppy_format.desktop
+#%{_datadir}/kde4/services/ServiceMenus/floppy_format.desktop
 %{_desktopdir}/kde4/KFloppy.desktop
 %{_iconsdir}/*/*/apps/kfloppy.*
+%{_kdedocdir}/en/kfloppy
 
-%files kgpg -f kgpg.lang
+%files kgpg
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kgpg
 %{_datadir}/apps/kgpg
@@ -628,14 +659,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kde4/kgpg.desktop
 %{_iconsdir}/*/*/apps/kgpg.*
 %{_datadir}/dbus-1/interfaces/org.kde.kgpg.Key.xml
+%{_kdedocdir}/en/kgpg
 
-%files ktimer -f ktimer.lang
+%files ktimer
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/ktimer
 %{_desktopdir}/kde4/ktimer.desktop
 %{_iconsdir}/*/*/*/ktimer.png
+%{_kdedocdir}/en/ktimer
 
-%files kwalletmanager -f kwallet.lang
+%files kwalletmanager
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kwalletmanager
 %attr(755,root,root) %{_libdir}/kde4/kcm_kwallet.so
@@ -645,8 +678,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kde4/kwalletmanager.desktop
 %{_desktopdir}/kde4/kwalletmanager-kwalletd.desktop
 %{_iconsdir}/hicolor/*/apps/kwalletmanager*.png
+%{_kdedocdir}/en/kwallet
 
-%files superkaramba -f superkaramba.lang
+%files superkaramba
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/superkaramba
 %attr(755,root,root) %{_libdir}/libsuperkaramba.so.*.*.*
@@ -660,6 +694,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/plasma-scriptengine-superkaramba.desktop
 %{_desktopdir}/kde4/superkaramba.desktop
 %{_iconsdir}/[!l]*/*/*/superkaramba*.*
+%{_kdedocdir}/en/superkaramba
 
 %files printer-applet
 %defattr(644,root,root,755)
@@ -686,15 +721,15 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kde4/irkick.desktop
 %dir %{_datadir}/apps/irkick
 %{_datadir}/apps/irkick/irkick.notifyrc
-%{_datadir}/apps/remotes/AppleRemote.remote.xml
-%{_datadir}/apps/remotes/AsusDH.remote.xml
-%{_datadir}/apps/remotes/RM-0010.remote.xml
-%{_datadir}/apps/remotes/cimr100.remote.xml
-%{_datadir}/apps/remotes/hauppauge.remote.xml
-%{_datadir}/apps/remotes/packbell.remote.xml
-%{_datadir}/apps/remotes/remote.dtd
-%{_datadir}/apps/remotes/sherwood.remote.xml
-%{_datadir}/apps/remotes/sonytv.remote.xml
+#%{_datadir}/apps/remotes/AppleRemote.remote.xml
+#%{_datadir}/apps/remotes/AsusDH.remote.xml
+#%{_datadir}/apps/remotes/RM-0010.remote.xml
+#%{_datadir}/apps/remotes/cimr100.remote.xml
+#%{_datadir}/apps/remotes/hauppauge.remote.xml
+#%{_datadir}/apps/remotes/packbell.remote.xml
+#%{_datadir}/apps/remotes/remote.dtd
+#%{_datadir}/apps/remotes/sherwood.remote.xml
+#%{_datadir}/apps/remotes/sonytv.remote.xml
 %{_datadir}/autostart/irkick.desktop
 %{_iconsdir}/hicolor/22x22/apps/irkick.png
 %{_iconsdir}/oxygen/*x*/devices/infrared-remote.png
