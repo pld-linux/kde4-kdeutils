@@ -15,7 +15,7 @@ Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
 Version:	4.4.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
@@ -542,13 +542,13 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_clizip.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libbz2.so
 %attr(755,root,root) %{_libdir}/kde4/kerfuffle_libxz.so
-#%attr(755,root,root) %{_libdir}/kde4/libextracthere.so
+%attr(755,root,root) %{_libdir}/kde4/libextracthere.so
 %{_datadir}/apps/ark
 %{_datadir}/kde4/servicetypes/kerfufflePlugin.desktop
 %{_datadir}/kde4/services/ark_part.desktop
 %{_datadir}/kde4/services/kerfuffle_libarchive.desktop
 %{_datadir}/kde4/services/kerfuffle_libgz.desktop
-#%{_datadir}/kde4/services/ark_dndextract.desktop
+%{_datadir}/kde4/services/ark_dndextract.desktop
 %{_datadir}/kde4/services/kcm_lirc.desktop
 %{_datadir}/kde4/services/kerfuffle_cli7z.desktop
 %{_datadir}/kde4/services/kerfuffle_clirar.desktop
