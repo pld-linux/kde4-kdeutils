@@ -22,12 +22,10 @@ Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version
 # Source0-md5:	e744b82eb9edd229dfa5ca478221cd2e
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
-BuildRequires:	QtAssistant-devel >= %{qtver}
 BuildRequires:	QtCore-devel >= %{qtver}
 BuildRequires:	QtDBus-devel >= %{qtver}
 BuildRequires:	QtDesigner-devel >= %{qtver}
 BuildRequires:	QtGui-devel >= %{qtver}
-BuildRequires:	QtHelp-devel >= %{qtver}
 BuildRequires:	QtNetwork-devel >= %{qtver}
 BuildRequires:	QtOpenGL-devel >= %{qtver}
 BuildRequires:	QtScript-devel >= %{qtver}
@@ -41,18 +39,18 @@ BuildRequires:	QtXmlPatterns-devel >= %{qtver}
 BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	cmake >= 2.8.0
 BuildRequires:	gmp-devel
+BuildRequires:	kde4-kdebase-devel >= %{version}
+BuildRequires:	kde4-kdebase-workspace-devel >= %{version}
 BuildRequires:	kde4-kdelibs-devel >= %{version}
 BuildRequires:	kde4-kdepimlibs-devel >= %{version}
 BuildRequires:	libarchive-devel
-BuildRequires:	libtool
 BuildRequires:	libxml2-progs
-BuildRequires:	libzip-devel
-BuildRequires:	net-snmp-devel
 BuildRequires:	pkgconfig
-BuildRequires:	python-PyKDE4
-BuildRequires:	python-PyQt4-devel
+#BuildRequires:	python-PyKDE4
+#BuildRequires:	python-PyQt4-devel
 BuildRequires:	python-devel
 BuildRequires:	python-modules
+BuildRequires:	python-sip-devel
 BuildRequires:	qca-devel >= 2.0.0
 BuildRequires:	qimageblitz-devel
 BuildRequires:	qt4-build >= %{qtver}
@@ -94,8 +92,7 @@ Utilitarios para KDE. Programas disponibles en este paquete:
  - KTimer.
 
 %description -l ja.UTF-8
-KDEデスクトップ環境用のユーティリティ
-以下のようなパッケージが入っています。
+KDEデスクトップ環境用のユーティリティ 以下のようなパッケージが入っています。
 
 - ark - アーカイブ操作ツール
 - kcalc - 電卓
@@ -135,8 +132,7 @@ Utilitários para o KDE. Programas disponíveis neste pacote:
  - ark - менеджер архивов tar/gzip,
  - kcalc - научный калькулятор,
  - kedit - простой текстовый редактор,
- - kfloppy - утилита для форматирования
-   флоппи-дисков,
+ - kfloppy - утилита для форматирования флоппи-дисков,
  - kjots - блокнот,
 
 %description -l uk.UTF-8
@@ -144,8 +140,7 @@ Utilitários para o KDE. Programas disponíveis neste pacote:
  - ark - менеджер архівів tar/gzip,
  - kcalc - научний калькулятор,
  - kedit - простий текстовий редактор,
- - kfloppy - утиліта для форматування
-   флопі-дисків,
+ - kfloppy - утиліта для форматування флопі-дисків,
  - kjots - нотатник,
 
 %package devel
@@ -160,8 +155,8 @@ This package includes the header files you will need to compile
 applications that use kdeutils libraries.
 
 %description devel -l pl.UTF-8
-Ten pakiet zawiera pliki nagłówkowe niezbędne do kompilacji
-aplikacji używających bibliotek kdeutils.
+Ten pakiet zawiera pliki nagłówkowe niezbędne do kompilacji aplikacji
+używających bibliotek kdeutils.
 
 %description devel -l pt_BR.UTF-8
 Arquivos de inclusão para desenvolvimento e compilação de programas
@@ -181,9 +176,9 @@ Ark is a program for managing and quickly extracting archives. It
 supports arj, rar, zip, tar, zoo, lha and other formats.
 
 %description ark -l pl.UTF-8
-Ark jest programem służącym do zarządzania i szybkiego
-rozpakowywania archiwów. Obsługuje archiwa arj, rar, zip, tar, zoo,
-lha oraz inne formaty.
+Ark jest programem służącym do zarządzania i szybkiego rozpakowywania
+archiwów. Obsługuje archiwa arj, rar, zip, tar, zoo, lha oraz inne
+formaty.
 
 %description ark -l pt_BR.UTF-8
 Gerenciador de pacotes TAR/comprimidos do KDE.
@@ -320,9 +315,8 @@ kgpg is a simple, free, open source KDE frontend for gpg. It features
 - drag & drop encryption + clipboard en/decryption
 
 %description kgpg -l pl.UTF-8
-kgpg jest prostą, darmową, z otwartymi źródłami, graficzną
-nakładką na gpg przeznaczoną dla KDE. Ma następujące
-możliwości:
+kgpg jest prostą, darmową, z otwartymi źródłami, graficzną nakładką na
+gpg przeznaczoną dla KDE. Ma następujące możliwości:
 - tryb edytora umożliwiający napisanie/wklejenie tekstu oraz
   zaszyfrowanie/odszyfrowanie/podpisanie/sprawdzenie go,
 - zarządzanie kluczami: import, eksport, usuwanie, podpisywanie,
@@ -330,9 +324,8 @@ możliwości:
 - integrację z Konquerorem: kliknięcie lewym przyciskiem na pliku w
   celu odszyfrowania/sprawdzenia go, kliknięcie prawym przyciskiem na
   pliku w celu zaszyfrowania/podpisania go,
-- szyfrowanie: obsługa szyfrów symetrycznych; wiele kluczy i
-  domyślne szyfrowanie kluczem; opcjonalnie niszczenie plików
-  źródłowych,
+- szyfrowanie: obsługa szyfrów symetrycznych; wiele kluczy i domyślne
+  szyfrowanie kluczem; opcjonalnie niszczenie plików źródłowych,
 - sygnatury: tworzenie i sprawdzanie oddzielonych i czysto tekstowych
   sygnatur,
 - szyfrowanie metodą przeciągnij-i-upuść oraz szyfrowanie i
@@ -369,8 +362,8 @@ delaying the execution of a command.
 
 %description ktimer -l pl.UTF-8
 To jest aplikacja timera dla KDE. Umożliwia wykonywanie poleceń po
-określonym czasie, zapętlanie poleceń, a także opóźnienie
-wykonywania poleceń.
+określonym czasie, zapętlanie poleceń, a także opóźnienie wykonywania
+poleceń.
 
 %description ktimer -l pt_BR.UTF-8
 Monitor de tempo em forma de mini-aplicativo.
@@ -413,8 +406,8 @@ KDE Printer Applet is a system tray utility which shows current print
 jobs and printer warnings or errors.
 
 %description printer-applet -l pl.UTF-8
-KDE Printer Applet to narzędzie tacki systemowej pokazujące
-bieżące zadania drukarki oraz ostrzeżenia i błędy.
+KDE Printer Applet to narzędzie tacki systemowej pokazujące bieżące
+zadania drukarki oraz ostrzeżenia i błędy.
 
 %package irkick
 Summary:	KDE Irkick
