@@ -3,7 +3,7 @@
 #
 %define		_state		stable
 %define		orgname		kdeutils
-%define		qtver		4.6.1
+%define		qtver		4.6.2
 
 Summary:	K Desktop Environment - utilities
 Summary(es.UTF-8):	KDE - Utilitarios
@@ -14,12 +14,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.4.0
-Release:	3
+Version:	4.4.1
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	e744b82eb9edd229dfa5ca478221cd2e
+# Source0-md5:	7dd3dfd7cde8cae0d61f85dba4685dd1
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtCore-devel >= %{qtver}
