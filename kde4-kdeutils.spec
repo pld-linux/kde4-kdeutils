@@ -541,7 +541,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/kerfuffle_libarchive.desktop
 %{_datadir}/kde4/services/kerfuffle_libgz.desktop
 %{_datadir}/kde4/services/ark_dndextract.desktop
-%{_datadir}/kde4/services/kcm_lirc.desktop
 %{_datadir}/kde4/services/kerfuffle_cli7z.desktop
 %{_datadir}/kde4/services/kerfuffle_clirar.desktop
 %{_datadir}/kde4/services/kerfuffle_clizip.desktop
@@ -723,6 +722,7 @@ rm -rf $RPM_BUILD_ROOT
 #%{_datadir}/apps/remotes/sherwood.remote.xml
 #%{_datadir}/apps/remotes/sonytv.remote.xml
 %{_datadir}/autostart/irkick.desktop
+%{_datadir}/kde4/services/kcm_lirc.desktop
 %{_iconsdir}/hicolor/22x22/apps/irkick.png
 %{_iconsdir}/oxygen/*x*/devices/infrared-remote.png
 %{_iconsdir}/oxygen/*x*/actions/irkickflash.png
