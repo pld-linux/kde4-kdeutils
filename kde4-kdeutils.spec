@@ -166,7 +166,7 @@ Summary:	KDE Archive Manager
 Summary(pl.UTF-8):	Zarządca archiwów dla KDE
 Summary(pt_BR.UTF-8):	Gerenciador de pacotes TAR/comprimidos do KDE
 Group:		X11/Applications
-Requires:	kde4-kdebase >= %{version}
+Requires:	kde4-kdebase-workspace >= %{version}
 Requires:	libarchive
 Requires:	libzip
 
@@ -186,7 +186,7 @@ Gerenciador de pacotes TAR/comprimidos do KDE.
 Summary:	Binary file editor
 Summary(pl.UTF-8):	Edytor plików binarnych
 Group:		X11/Applications
-Requires:	kde4-kdebase >= %{version}
+Requires:	kde4-kdebase-workspace >= %{version}
 
 %description okteta
 The program Okteta is another implementation of a standalone, plain
@@ -203,7 +203,7 @@ Summary:	KDE Calculator
 Summary(pl.UTF-8):	Kalkulator dla KDE
 Summary(pt_BR.UTF-8):	Calculadora do KDE
 Group:		X11/Applications
-Requires:	kde4-kdebase >= %{version}
+Requires:	kde4-kdebase-workspace >= %{version}
 
 %description kcalc
 Calculator for KDE.
@@ -219,7 +219,7 @@ Summary:	KDE Character Selector
 Summary(pl.UTF-8):	Program do wybierania znaków dla KDE
 Summary(pt_BR.UTF-8):	Ferramenta de seleção de caracteres
 Group:		X11/Applications
-Requires:	kde4-kdebase >= %{version}
+Requires:	kde4-kdebase-workspace >= %{version}
 
 %description kcharselect
 Application for selecting characters.
@@ -264,7 +264,7 @@ Summary:	KDE Text Editor
 Summary(pl.UTF-8):	Edytor tekstu dla KDE
 Summary(pt_BR.UTF-8):	Editor de texto melhorado do KDE
 Group:		X11/Applications/Editors
-Requires:	kde4-kdebase >= %{version}
+Requires:	kde4-kdebase-workspace >= %{version}
 
 %description kedit
 Simple text editor for KDE.
@@ -281,7 +281,7 @@ Summary(pl.UTF-8):	Program formatujący dyskietki dla KDE
 Summary(pt_BR.UTF-8):	Ferramenta de formatação de disquetes
 Group:		X11/Applications
 Requires:	dosfstools
-Requires:	kde4-kdebase >= %{version}
+Requires:	kde4-kdebasei-workspace >= %{version}
 
 %description kfloppy
 KFloppy formats floppy disks and puts a DOS or ext2fs filesystem on
@@ -298,7 +298,7 @@ Ferramenta de formatação de disquetes.
 Summary:	A frontend for gpg
 Summary(pl.UTF-8):	Nakładka graficzna na gpg
 Group:		X11/Applications
-Requires:	kde4-kdebase >= %{version}
+Requires:	kde4-kdebase-workspace >= %{version}
 
 %description kgpg
 kgpg is a simple, free, open source KDE frontend for gpg. It features
@@ -335,7 +335,7 @@ Summary:	KDE Note taker
 Summary(pl.UTF-8):	Notatnik dla KDE
 Summary(pt_BR.UTF-8):	Ferramenta de armazenamento de livros
 Group:		X11/Applications
-Requires:	kde4-kdebase >= %{version}
+Requires:	kde4-kdebasei-workspace >= %{version}
 
 %description kjots
 kjots is a small note taker program. Name and idea are taken from the
@@ -352,7 +352,7 @@ Summary:	KDE Timer
 Summary(pl.UTF-8):	Timer dla KDE
 Summary(pt_BR.UTF-8):	Monitor de tempo em forma de mini-aplicativo
 Group:		X11/Applications
-Requires:	kde4-kdelibs >= %{version}
+Requires:	kde4-kdelibs-workspace >= %{version}
 
 %description ktimer
 This is a timer application for KDE. It allows you to execute commands
@@ -371,7 +371,7 @@ Monitor de tempo em forma de mini-aplicativo.
 Summary:	Password management tool for KDE
 Summary(pl.UTF-8):	Narzędzie do zarządzania hasłami dla KDE
 Group:		X11/Applications
-Requires:	kde4-kdebase >= %{version}
+Requires:	kde4-kdebase-workspace >= %{version}
 
 %description kwalletmanager
 Password management tool for KDE.
@@ -383,7 +383,7 @@ Narzędzie do zarządzania hasłami w KDE.
 Summary:	Little interactive widgets on KDE desktop
 Summary(pl.UTF-8):	Małe interaktywne widżety na pulpicie KDE
 Group:		X11/Applications
-Requires:	kde4-kdebase >= %{version}
+Requires:	kde4-kdebase-workspace >= %{version}
 Provides:	superkaramba = %{version}-%{release}
 
 %description superkaramba
@@ -398,7 +398,7 @@ uruchamianie małych interaktywnych widżetów na pulpicie KDE.
 Summary:	Printer status applet for KDE
 Summary(pl.UTF-8):	Aplet stanu drukarki dla KDE
 Group:		X11/Applications
-Requires:	kde4-kdebase >= %{version}
+Requires:	kde4-kdebase-workspace >= %{version}
 
 %description printer-applet
 KDE Printer Applet is a system tray utility which shows current print
@@ -412,7 +412,7 @@ zadania drukarki oraz ostrzeżenia i błędy.
 Summary:	KDE Irkick
 Summary(pl.UTF-8):	Irkick dla KDE
 Group:		X11/Applications
-Requires:	kde4-kdebase >= %{version}
+Requires:	kde4-kdebase-workspace >= %{version}
 
 %description irkick
 KDE LIRC is the infrastructure for the KDE's Infrared Remote Control
@@ -425,7 +425,7 @@ irkick.
 Summary:	KDE Profiles for Aplications
 Summary(pl.UTF-8):	Profile aplikacji dla KDE
 Group:		X11/Applications
-Requires:	kde4-kdebase >= %{version}
+Requires:	kde4-kdebasei-workspace >= %{version}
 
 %description profiles
 Profiles for aplications.
@@ -494,18 +494,18 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libsuperkaramba.so
 %attr(755,root,root) %{_libdir}/liboktetagui.so
 %attr(755,root,root) %{_libdir}/liboktetacore.so
-#%attr(755,root,root) %{_libdir}/libkdelirc_shared.so
 %attr(755,root,root) %{_libdir}/libkastencontrollers.so
 %attr(755,root,root) %{_libdir}/libkastencore.so
 %attr(755,root,root) %{_libdir}/libkastengui.so
 %attr(755,root,root) %{_libdir}/liboktetakastencontrollers.so
 %attr(755,root,root) %{_libdir}/liboktetakastencore.so
 %attr(755,root,root) %{_libdir}/liboktetakastengui.so
+%attr(755,root,root) %{_libdir}/liblibkremotecontrol.so
 
-#%{_includedir}/KDE/Kasten
-#%{_includedir}/KDE/Okteta
-#%{_includedir}/kasten
-#%{_includedir}/okteta
+%{_includedir}/KDE/Kasten
+%{_includedir}/KDE/Okteta
+%{_includedir}/kasten
+%{_includedir}/okteta
 
 #%files profiles
 #%defattr(644,root,root,755)
@@ -574,6 +574,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/liboktetakastencontrollers.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/liboktetakastengui.so.?
 %attr(755,root,root) %{_libdir}/liboktetakastengui.so.*.*.*
+%attr(755,root,root) %{_libdir}/kde4/plugins/designer/oktetadesignerplugin.so
 %{_desktopdir}/kde4/okteta.desktop
 %dir %{_datadir}/apps/okteta
 %{_datadir}/apps/okteta/oktetaui.rc
@@ -581,10 +582,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/oktetapart/oktetapartbrowserui.rc
 %{_datadir}/apps/oktetapart/oktetapartreadonlyui.rc
 %{_datadir}/apps/oktetapart/oktetapartreadwriteui.rc
+%{_datadir}/apps/okteta
 %{_iconsdir}/hicolor/*x*/apps/okteta.png
 %{_datadir}/kde4/services/kbytearrayedit.desktop
 %{_datadir}/kde4/services/oktetapart.desktop
 %{_kdedocdir}/en/okteta
+%{_datadir}/mime/packages/okteta.xml
+%{_datadir}/config/okteta-structures.knsrc
 #kasten
 %attr(755,root,root) %ghost %{_libdir}/libkastencore.so.?
 %attr(755,root,root) %{_libdir}/libkastencore.so.*.*.*
@@ -633,7 +637,6 @@ rm -rf $RPM_BUILD_ROOT
 %files kfloppy
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kfloppy
-#%{_datadir}/kde4/services/ServiceMenus/floppy_format.desktop
 %{_desktopdir}/kde4/KFloppy.desktop
 %{_iconsdir}/*/*/apps/kfloppy.*
 %{_kdedocdir}/en/kfloppy
@@ -701,31 +704,28 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/printer-applet/printer-applet.notifyrc
 %{_datadir}/apps/printer-applet/statereason.py
 %{_datadir}/autostart/printer-applet.desktop
+%{_kdedocdir}/en/printer-applet
 
-#%files irkick
-#%defattr(644,root,root,755)
-#%attr(755,root,root) %{_bindir}/irkick
-#%attr(755,root,root) %{_libdir}/kde4/kcm_lirc.so
-#%attr(755,root,root) %{_libdir}/libkdeinit4_irkick.so
-#%attr(755,root,root) %ghost %{_libdir}/libkdelirc_shared.so.?
-#%attr(755,root,root) %{_libdir}/libkdelirc_shared.so.1.0.0
-#%{_desktopdir}/kde4/irkick.desktop
-#%dir %{_datadir}/apps/irkick
-#%{_datadir}/apps/irkick/irkick.notifyrc
-#%{_datadir}/apps/remotes/AppleRemote.remote.xml
-#%{_datadir}/apps/remotes/AsusDH.remote.xml
-#%{_datadir}/apps/remotes/RM-0010.remote.xml
-#%{_datadir}/apps/remotes/cimr100.remote.xml
-#%{_datadir}/apps/remotes/hauppauge.remote.xml
-#%{_datadir}/apps/remotes/packbell.remote.xml
-#%{_datadir}/apps/remotes/remote.dtd
-#%{_datadir}/apps/remotes/sherwood.remote.xml
-#%{_datadir}/apps/remotes/sonytv.remote.xml
-#%{_datadir}/autostart/irkick.desktop
-#%{_datadir}/kde4/services/kcm_lirc.desktop
-#%{_iconsdir}/hicolor/22x22/apps/irkick.png
-#%{_iconsdir}/oxygen/*x*/devices/infrared-remote.png
-#%{_iconsdir}/oxygen/*x*/actions/irkickflash.png
-#%{_iconsdir}/oxygen/*x*/actions/irkickoff.png
-#%{_kdedocdir}/en/irkick
-#%{_kdedocdir}/en/kcmlirc
+%files irkick
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/krcdnotifieritem
+%attr(755,root,root) %{_libdir}/kde4/kcm_remotecontrol.so
+%attr(755,root,root) %{_libdir}/kde4/kded_kremotecontroldaemon.so
+%attr(755,root,root) %{_libdir}/kde4/plasma_engine_kremoteconrol.so
+%attr(755,root,root) %ghost %{_libdir}/liblibkremotecontrol.so.?
+%attr(755,root,root) %{_libdir}/liblibkremotecontrol.so.*.*.*
+%{_desktopdir}/kde4/krcdnotifieritem.desktop
+%{_datadir}/apps/kremotecontrol
+%{_datadir}/apps/kremotecontroldaemon
+%{_datadir}/config.kcfg/structviewpreferences.kcfg
+%{_kdedocdir}/en/kcontrol/blockdevices/common
+%{_kdedocdir}/en/kcontrol/blockdevices/index.cache.bz2
+%{_kdedocdir}/en/kcontrol/blockdevices/index.docbook
+%{_iconsdir}/hicolor/*x*/actions/krcd_flash.png
+%{_iconsdir}/hicolor/*x*/actions/krcd_off.png
+%{_iconsdir}/hicolor/*x*/apps/krcd.png
+%{_iconsdir}/hicolor/*x*/devices/infrared-remote.png
+%{_datadir}/kde4/services/kcm_remotecontrol.desktop
+%{_datadir}/kde4/services/kded/kremotecontroldaemon.desktop
+%{_datadir}/kde4/services/plasma-engine-kremotecontrol.desktop
+%{_kdedocdir}/en/kremotecontrol
