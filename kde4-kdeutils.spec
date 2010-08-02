@@ -433,6 +433,17 @@ Profiles for aplications.
 %description profiles -l pl.UTF-8
 Profile do aplikacji.
 
+%package sweeper
+Summary:	System cleaner
+Summary(pl.UTF-8):	Czyszczenie systemu
+Group:		X11/Applications
+
+%description sweeper
+System cleaner.
+
+%description sweeper -l pl.UTF-8
+Czyszczenie systemu.
+
 %prep
 %setup -q -n %{orgname}-%{version}
 
@@ -552,7 +563,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kde4/ark.desktop
 %{_kdedocdir}/en/ark
 %{_mandir}/man1/ark.1.*
-## ?
+
+%files sweeper
+%defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/sweeper
 %{_desktopdir}/kde4/sweeper.desktop
 %dir %{_datadir}/apps/sweeper
