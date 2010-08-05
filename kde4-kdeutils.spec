@@ -15,7 +15,7 @@ Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
 Version:	4.5.0
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
@@ -248,7 +248,7 @@ Summary:	KDE Disk space GUI
 Summary(pl.UTF-8):	df dla KDE
 Summary(pt_BR.UTF-8):	Mostra o status de espaço em disco
 Group:		X11/Applications
-Requires:	kde4-kdebase-infocenter >= %{version}
+Requires:	kde4-kdebase-workspace-infocenter >= %{version}
 
 %description kdf
 This program shows the disk usage of the mounted devices.
@@ -281,7 +281,7 @@ Summary(pl.UTF-8):	Program formatujący dyskietki dla KDE
 Summary(pt_BR.UTF-8):	Ferramenta de formatação de disquetes
 Group:		X11/Applications
 Requires:	dosfstools
-Requires:	kde4-kdebasei-workspace >= %{version}
+Requires:	kde4-kdebase-workspace >= %{version}
 
 %description kfloppy
 KFloppy formats floppy disks and puts a DOS or ext2fs filesystem on
@@ -352,7 +352,7 @@ Summary:	KDE Timer
 Summary(pl.UTF-8):	Timer dla KDE
 Summary(pt_BR.UTF-8):	Monitor de tempo em forma de mini-aplicativo
 Group:		X11/Applications
-Requires:	kde4-kdelibs-workspace >= %{version}
+Requires:	kde4-kdebase-workspace >= %{version}
 
 %description ktimer
 This is a timer application for KDE. It allows you to execute commands
