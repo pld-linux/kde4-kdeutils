@@ -15,7 +15,7 @@ Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
 Version:	4.5.0
-Release:	5
+Release:	6
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
@@ -732,9 +732,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kremotecontrol
 %{_datadir}/apps/kremotecontroldaemon
 %{_datadir}/config.kcfg/structviewpreferences.kcfg
-%{_kdedocdir}/en/kcontrol/blockdevices/common
-%{_kdedocdir}/en/kcontrol/blockdevices/index.cache.bz2
-%{_kdedocdir}/en/kcontrol/blockdevices/index.docbook
 %{_iconsdir}/hicolor/*x*/actions/krcd_flash.png
 %{_iconsdir}/hicolor/*x*/actions/krcd_off.png
 %{_iconsdir}/hicolor/*x*/apps/krcd.png
