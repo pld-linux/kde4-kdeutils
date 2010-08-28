@@ -14,12 +14,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.5.0
-Release:	7
+Version:	4.5.1
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	48af22ff7c3ef6474b9255b67ae122de
+# Source0-md5:	f9e19979e80ce58c8a9a58fcb3521d52
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtCore-devel >= %{qtver}
@@ -590,8 +590,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/liboktetakastengui.so.*.*.*
 %attr(755,root,root) %{_libdir}/kde4/plugins/designer/oktetadesignerplugin.so
 %{_desktopdir}/kde4/okteta.desktop
-%dir %{_datadir}/apps/okteta
-%{_datadir}/apps/okteta/oktetaui.rc
 %dir %{_datadir}/apps/oktetapart
 %{_datadir}/apps/oktetapart/oktetapartbrowserui.rc
 %{_datadir}/apps/oktetapart/oktetapartreadonlyui.rc
@@ -739,4 +737,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/kcm_remotecontrol.desktop
 %{_datadir}/kde4/services/kded/kremotecontroldaemon.desktop
 %{_datadir}/kde4/services/plasma-engine-kremotecontrol.desktop
-%{_kdedocdir}/en/kremotecontrol
+#%{_kdedocdir}/en/kremotecontrol
