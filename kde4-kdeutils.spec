@@ -1,4 +1,5 @@
 # TODO:
+# - package filelight
 # - python-PyKDE4 whatever for printer-applet
 #
 %define		_state		stable
@@ -14,12 +15,12 @@ Summary(ru.UTF-8):	K Desktop Environment - Утилиты
 Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
-Version:	4.5.5
-Release:	1
+Version:	4.6.0
+Release:	0.1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	81bdf5d3987ade47ca284458c842d60e
+# Source0-md5:	d89860891451d11983d7cadc8566b4e0
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtCore-devel >= %{qtver}
@@ -183,22 +184,6 @@ formaty.
 
 %description ark -l pt_BR.UTF-8
 Gerenciador de pacotes TAR/comprimidos do KDE.
-
-%package okteta
-Summary:	Binary file editor
-Summary(pl.UTF-8):	Edytor plików binarnych
-Group:		X11/Applications
-Requires:	kde4-kdebase-workspace >= %{version}
-
-%description okteta
-The program Okteta is another implementation of a standalone, plain
-old-fashioned hex editor. It is based on the libkakao framework, with
-plugins using the basic Okteta core and gui libraries.
-
-%description okteta -l pl.UTF-8
-Okteta to kolejna implementacja samodzielnego, tradycyjnego edytora
-szesnastkowego. Jest oparty na szkielecie libkakao z wtyczkami
-wykorzystującymi biblioteki core i gui Okteta.
 
 %package kcalc
 Summary:	KDE Calculator
@@ -469,7 +454,6 @@ rm -rf $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT%{_datadir}/icons/locolor
 
 #%find_lang ark			--with-kde
-#%find_lang okteta		--with-kde
 #%find_lang kcalc		--with-kde
 #%find_lang kcharselect		--with-kde
 #%find_lang kdf			--with-kde
@@ -486,9 +470,6 @@ rm -rf $RPM_BUILD_ROOT
 %post	ark		-p /sbin/ldconfig
 %postun	ark		-p /sbin/ldconfig
 
-%post	okteta		-p /sbin/ldconfig
-%postun	okteta		-p /sbin/ldconfig
-
 %post	superkaramba	-p /sbin/ldconfig
 %postun	superkaramba	-p /sbin/ldconfig
 
@@ -499,20 +480,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libkerfuffle.so
 %attr(755,root,root) %{_libdir}/libsuperkaramba.so
-%attr(755,root,root) %{_libdir}/liboktetagui.so
-%attr(755,root,root) %{_libdir}/liboktetacore.so
-%attr(755,root,root) %{_libdir}/libkastencontrollers.so
-%attr(755,root,root) %{_libdir}/libkastencore.so
-%attr(755,root,root) %{_libdir}/libkastengui.so
-%attr(755,root,root) %{_libdir}/liboktetakastencontrollers.so
-%attr(755,root,root) %{_libdir}/liboktetakastencore.so
-%attr(755,root,root) %{_libdir}/liboktetakastengui.so
 %attr(755,root,root) %{_libdir}/liblibkremotecontrol.so
-
-%{_includedir}/KDE/Kasten
-%{_includedir}/KDE/Okteta
-%{_includedir}/kasten
-%{_includedir}/okteta
 
 #%files profiles
 #%defattr(644,root,root,755)
@@ -551,6 +519,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/kerfuffle_cli7z.desktop
 %{_datadir}/kde4/services/kerfuffle_clirar.desktop
 %{_datadir}/kde4/services/kerfuffle_clizip.desktop
+%{_datadir}/kde4/services/kerfuffle_libarchive_readonly.desktop
 %{_datadir}/kde4/services/kerfuffle_libbz2.desktop
 %{_datadir}/kde4/services/kerfuffle_libxz.desktop
 %{_datadir}/kde4/services/ServiceMenus/ark_addtoservicemenu.desktop
@@ -568,42 +537,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/sweeper/sweeperui.rc
 %{_datadir}/dbus-1/interfaces/org.kde.sweeper.xml
 %{_kdedocdir}/en/sweeper
-
-%files okteta
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/okteta
-%attr(755,root,root) %{_libdir}/kde4/libkbytearrayedit.so
-%attr(755,root,root) %{_libdir}/kde4/oktetapart.so
-%attr(755,root,root) %ghost %{_libdir}/liboktetacore.so.?
-%attr(755,root,root) %{_libdir}/liboktetacore.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/liboktetagui.so.?
-%attr(755,root,root) %{_libdir}/liboktetagui.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/liboktetakastencore.so.?
-%attr(755,root,root) %{_libdir}/liboktetakastencore.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/liboktetakastencontrollers.so.?
-%attr(755,root,root) %{_libdir}/liboktetakastencontrollers.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/liboktetakastengui.so.?
-%attr(755,root,root) %{_libdir}/liboktetakastengui.so.*.*.*
-%attr(755,root,root) %{_libdir}/kde4/plugins/designer/oktetadesignerplugin.so
-%{_desktopdir}/kde4/okteta.desktop
-%dir %{_datadir}/apps/oktetapart
-%{_datadir}/apps/oktetapart/oktetapartbrowserui.rc
-%{_datadir}/apps/oktetapart/oktetapartreadonlyui.rc
-%{_datadir}/apps/oktetapart/oktetapartreadwriteui.rc
-%{_datadir}/apps/okteta
-%{_iconsdir}/hicolor/*x*/apps/okteta.png
-%{_datadir}/kde4/services/kbytearrayedit.desktop
-%{_datadir}/kde4/services/oktetapart.desktop
-%{_kdedocdir}/en/okteta
-%{_datadir}/mime/packages/okteta.xml
-%{_datadir}/config/okteta-structures.knsrc
-#kasten
-%attr(755,root,root) %ghost %{_libdir}/libkastencore.so.?
-%attr(755,root,root) %{_libdir}/libkastencore.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkastencontrollers.so.?
-%attr(755,root,root) %{_libdir}/libkastencontrollers.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkastengui.so.?
-%attr(755,root,root) %{_libdir}/libkastengui.so.*.*.*
 
 %files kcalc
 %defattr(644,root,root,755)
@@ -725,7 +658,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kde4/krcdnotifieritem.desktop
 %{_datadir}/apps/kremotecontrol
 %{_datadir}/apps/kremotecontroldaemon
-%{_datadir}/config.kcfg/structviewpreferences.kcfg
 %{_iconsdir}/hicolor/*x*/actions/krcd_flash.png
 %{_iconsdir}/hicolor/*x*/actions/krcd_off.png
 %{_iconsdir}/hicolor/*x*/apps/krcd.png
