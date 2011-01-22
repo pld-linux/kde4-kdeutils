@@ -1,5 +1,4 @@
 # TODO:
-# - package filelight
 # - python-PyKDE4 whatever for printer-applet
 #
 %define		_state		stable
