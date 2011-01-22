@@ -16,7 +16,7 @@ Summary(uk.UTF-8):	K Desktop Environment - Утиліти
 Summary(zh_CN.UTF-8):	KDE实用工具
 Name:		kde4-kdeutils
 Version:	4.6.0
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
@@ -431,6 +431,17 @@ System cleaner.
 %description sweeper -l pl.UTF-8
 Czyszczenie systemu.
 
+%package filelight
+Summary:	Disk usage statistics
+Summary(pl.UTF-8):	Statystyki zużycia przestrzeni dyskowej
+Group:		X11/Applications
+
+%description filelight
+Disk usage statistics.
+
+%description filelight -l pl.UTF-8
+Statystyki zużycia przestrzeni dyskowej.
+
 %prep
 %setup -q -n %{orgname}-%{version}
 
@@ -666,3 +677,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/kded/kremotecontroldaemon.desktop
 %{_datadir}/kde4/services/plasma-engine-kremotecontrol.desktop
 %{_kdedocdir}/en/kcontrol
+
+%files filelight
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/filelight
+%attr(755,root,root) %{_libdir}/kde4/filelightpart.so
+%{_desktopdir}/kde4/filelight.desktop
+%{_datadir}/apps/filelight/filelightui.rc
+%{_datadir}/apps/filelightpart/filelightpartui.rc
+%{_datadir}/config/filelightrc
+%{_kdedocdir}/en/filelight
+%{_iconsdir}/hicolor/*x*/apps/filelight.png
+%{_iconsdir}/hicolor/*x*/actions/view_filelight.png
+%{_datadir}/kde4/services/filelightpart.desktop
