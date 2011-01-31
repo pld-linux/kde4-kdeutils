@@ -682,8 +682,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/filelight
 %attr(755,root,root) %{_libdir}/kde4/filelightpart.so
 %{_desktopdir}/kde4/filelight.desktop
-%{_datadir}/apps/filelight/filelightui.rc
-%{_datadir}/apps/filelightpart/filelightpartui.rc
+%{_datadir}/apps/filelight
+%{_datadir}/apps/filelightpart
 %{_datadir}/config/filelightrc
 %{_kdedocdir}/en/filelight
 %{_iconsdir}/hicolor/*x*/apps/filelight.png
