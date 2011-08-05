@@ -39,6 +39,8 @@ BuildRequires:	QtXml-devel >= %{qtver}
 BuildRequires:	QtXmlPatterns-devel >= %{qtver}
 BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	cmake >= 2.8.0
+BuildRequires:	docbook-dtd42-xml
+BuildRequires:	docbook-style-xsl
 BuildRequires:	gmp-devel
 # shadziu nie wywalaj tego bo od tego zalezy libextracthere
 BuildRequires:	kde4-kdebase-devel >= %{version}
@@ -48,6 +50,7 @@ BuildRequires:	kde4-kdepimlibs-devel >= %{version}
 BuildRequires:	libarchive-devel >= 2.8.3
 BuildRequires:	libxml2-progs
 BuildRequires:	pkgconfig
+BuildRequires:	python-PyKDE4
 BuildRequires:	python-devel
 BuildRequires:	python-modules
 BuildRequires:	python-sip-devel
@@ -59,6 +62,7 @@ BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.600
 BuildRequires:	system-config-printer
+BuildRequires:	xorg-lib-libXtst-devel
 BuildRequires:	xz-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
